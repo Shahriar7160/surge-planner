@@ -1,0 +1,36 @@
+{
+  "R0": 1.5594272893458143,
+  "control_strength": 0.49299746688032997,
+  "control_midpoint_day_gueckedou": 154.5396240536118,
+  "mobility_share": 0.005001721253056229,
+  "reporting_rate": 0.39999905160369537,
+  "control_midpoint_day_macenta": 319.9495725101426,
+  "control_midpoint_day_other": 91.42742804421326,
+  "introduction_day_macenta": 246.52659961557987,
+  "control_midpoint_date_gueckedou": "2014-05-04",
+  "control_midpoint_date_macenta": "2014-10-16",
+  "control_midpoint_date_other": "2014-03-02",
+  "introduction_date_macenta": "2014-08-04",
+  "rmse_log": 0.09624953513144167,
+  "seed_patch": "Gu\u00e9ck\u00e9dou",
+  "seed_idx": 3,
+  "theta": [
+    1.5594272893458143,
+    0.49299746688032997,
+    154.5396240536118,
+    0.005001721253056229,
+    0.39999905160369537,
+    319.9495725101426,
+    91.42742804421326,
+    246.52659961557987
+  ],
+  "day0": "2013-12-01",
+  "key": {
+    "START_DATE": "2013-12-01",
+    "INCUBATION_D": 9.4,
+    "INFECTIOUS_D": 7.4,
+    "MOBILITY_DECAY_H": 2.0,
+    "REPORTING_RATE": 0.4,
+    "MIN_MOBILITY_SHARE": 0.005
+  }
+}

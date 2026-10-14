@@ -1,0 +1,70 @@
+{
+ "S1": {
+  "beds_in_layout": 216,
+  "beds_in_brief": 216,
+  "beds_match": true,
+  "red_green_contacts": [],
+  "overlaps": [],
+  "max_staff_walk_m": 30.5,
+  "staff_walk_ok": true,
+  "patient_path_m": 124.5,
+  "fenced_area_m2": 8547,
+  "fenced_size_m": [
+   77,
+   111
+  ],
+  "brief_plot_m2": 14949,
+  "ok": true
+ },
+ "S2": {
+  "beds_in_layout": 108,
+  "beds_in_brief": 108,
+  "beds_match": true,
+  "red_green_contacts": [],
+  "overlaps": [],
+  "max_staff_walk_m": 30.5,
+  "staff_walk_ok": true,
+  "patient_path_m": 103.5,
+  "fenced_area_m2": 6390,
+  "fenced_size_m": [
+   71,
+   90
+  ],
+  "brief_plot_m2": 8149,
+  "ok": true
+ },
+ "S3": {
+  "beds_in_layout": 84,
+  "beds_in_brief": 84,
+  "beds_match": true,
+  "red_green_contacts": [],
+  "overlaps": [],
+  "max_staff_walk_m": 24.5,
+  "staff_walk_ok": true,
+  "patient_path_m": 97.5,
+  "fenced_area_m2": 5850,
+  "fenced_size_m": [
+   65,
+   90
+  ],
+  "brief_plot_m2": 6756,
+  "ok": true
+ },
+ "S4": {
+  "beds_in_layout": 84,
+  "beds_in_brief": 84,
+  "beds_match": true,
+  "red_green_contacts": [],
+  "overlaps": [],
+  "max_staff_walk_m": 24.5,
+  "staff_walk_ok": true,
+  "patient_path_m": 97.5,
+  "fenced_area_m2": 5850,
+  "fenced_size_m": [
+   65,
+   90
+  ],
+  "brief_plot_m2": 6716,
+  "ok": true
+ }
+}

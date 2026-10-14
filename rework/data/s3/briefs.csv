@@ -1,0 +1,5 @@
+site_id,near,peak_confirmed_beds,modules_suspect,modules_probable,modules_confirmed,modules_total,beds_total,staff_total,staff_per_shift,water_l_day,power_kw,medical_waste_kg_day,ppe_sets_day,chlorine_l_day,built_net_m2,built_gross_m2,plot_m2,plot_side_m,buildable_within_300m_m2,fits
+S1,Fokodoumandou,120.0,5,3,10,18,216,668,223,119800,231,1728,672,4320,3136,4077,14949,122,242351,True
+S2,Kagbadou,48.7,2,2,5,9,108,346,116,60500,123,864,336,2160,1773,2305,8149,90,253892,True
+S3,Kouankan,39.5,2,1,4,7,84,276,92,47400,99,672,264,1680,1472,1914,6756,82,155797,True
+S4,N'Zébéla,37.0,2,1,4,7,84,276,92,47400,99,672,264,1680,1472,1914,6716,82,121176,True

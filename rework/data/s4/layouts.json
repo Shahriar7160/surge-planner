@@ -1,0 +1,1724 @@
+{
+ "meta": {
+  "units": "m",
+  "origin": "local plan, road along bottom edge",
+  "params": "pipeline/s4_params.py"
+ },
+ "layouts": [
+  {
+   "site_id": "S1",
+   "rects": [
+    {
+     "name": "triage",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 0.0,
+     "w": 24.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "family_visiting",
+     "zone": "amber",
+     "x": 37.0,
+     "y": 0.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "donning_suspect_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 15.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_suspect_1",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 21.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "suspect_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M3",
+     "zone": "red",
+     "x": 31.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M4",
+     "zone": "red",
+     "x": 37.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M5",
+     "zone": "red",
+     "x": 43.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "donning_probable_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 36.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_probable_2",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 42.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "probable_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "probable_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "probable_M3",
+     "zone": "red",
+     "x": 31.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "donning_confirmed_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 57.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_confirmed_3",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 63.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "confirmed_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M3",
+     "zone": "red",
+     "x": 31.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M4",
+     "zone": "red",
+     "x": 37.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M5",
+     "zone": "red",
+     "x": 43.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "donning_confirmed_4",
+     "zone": "green",
+     "x": 13.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_4",
+     "zone": "green",
+     "x": 13.0,
+     "y": 78.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_confirmed_4",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 84.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "confirmed_M6",
+     "zone": "red",
+     "x": 19.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M7",
+     "zone": "red",
+     "x": 25.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M8",
+     "zone": "red",
+     "x": 31.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M9",
+     "zone": "red",
+     "x": 37.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M10",
+     "zone": "red",
+     "x": 43.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "patient_corridor",
+     "zone": "red",
+     "x": 49.0,
+     "y": 6.0,
+     "w": 3.0,
+     "h": 84.0,
+     "kind": "corridor"
+    },
+    {
+     "name": "patient_discharge",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 93.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "laundry",
+     "zone": "amber",
+     "x": 19.0,
+     "y": 93.0,
+     "w": 18.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "morgue",
+     "zone": "red",
+     "x": 40.0,
+     "y": 93.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "incinerator_waste",
+     "zone": "red",
+     "x": 53.0,
+     "y": 93.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "admin_data",
+     "zone": "green",
+     "x": 0,
+     "y": 0.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "lab",
+     "zone": "green",
+     "x": 0,
+     "y": 6.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "pharmacy",
+     "zone": "green",
+     "x": 0,
+     "y": 12.0,
+     "w": 12.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "stores",
+     "zone": "green",
+     "x": 0,
+     "y": 24.0,
+     "w": 12.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_rest",
+     "zone": "green",
+     "x": 0,
+     "y": 36.0,
+     "w": 12.0,
+     "h": 30.0,
+     "kind": "space"
+    },
+    {
+     "name": "water_treatment",
+     "zone": "service",
+     "x": 0.0,
+     "y": -12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "generator",
+     "zone": "service",
+     "x": 18.0,
+     "y": -12.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "loading_zone",
+     "zone": "service",
+     "x": 30.0,
+     "y": -18.0,
+     "w": 18.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_dormitory",
+     "zone": "service",
+     "x": 77.0,
+     "y": 0,
+     "w": 102.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "burial_area",
+     "zone": "service",
+     "x": 77.0,
+     "y": 81.0,
+     "w": 108.0,
+     "h": 18.0,
+     "kind": "space"
+    }
+   ],
+   "patient_flow": [
+    [
+     19.0,
+     3.0
+    ],
+    [
+     50.5,
+     3.0
+    ],
+    [
+     50.5,
+     18.0
+    ],
+    [
+     50.5,
+     39.0
+    ],
+    [
+     50.5,
+     60.0
+    ],
+    [
+     50.5,
+     81.0
+    ],
+    [
+     50.5,
+     96.0
+    ]
+   ],
+   "rows": [
+    {
+     "ward": "suspect",
+     "y": 9.0,
+     "modules": 5
+    },
+    {
+     "ward": "probable",
+     "y": 30.0,
+     "modules": 3
+    },
+    {
+     "ward": "confirmed",
+     "y": 51.0,
+     "modules": 5
+    },
+    {
+     "ward": "confirmed",
+     "y": 72.0,
+     "modules": 5
+    }
+   ],
+   "fences": {
+    "outer": [
+     -6.0,
+     -6.0,
+     77.0,
+     111.0
+    ],
+    "red_inner": [
+     12.5,
+     7.5,
+     53.0,
+     91.5
+    ]
+   },
+   "extent": [
+    0,
+    -18.0,
+    185.0,
+    99.0
+   ],
+   "placement": {
+    "rotation_deg": 37.0,
+    "mirrored": false,
+    "road_m": 146
+   }
+  },
+  {
+   "site_id": "S2",
+   "rects": [
+    {
+     "name": "triage",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 0.0,
+     "w": 18.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "family_visiting",
+     "zone": "amber",
+     "x": 31.0,
+     "y": 0.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "donning_suspect_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 15.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_suspect_1",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 21.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "suspect_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "donning_probable_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 36.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_probable_2",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 42.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "probable_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "probable_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "donning_confirmed_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 57.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_confirmed_3",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 63.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "confirmed_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M3",
+     "zone": "red",
+     "x": 31.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M4",
+     "zone": "red",
+     "x": 37.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M5",
+     "zone": "red",
+     "x": 43.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "patient_corridor",
+     "zone": "red",
+     "x": 49.0,
+     "y": 6.0,
+     "w": 3.0,
+     "h": 63.0,
+     "kind": "corridor"
+    },
+    {
+     "name": "patient_discharge",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "laundry",
+     "zone": "amber",
+     "x": 19.0,
+     "y": 72.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "morgue",
+     "zone": "red",
+     "x": 46.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "incinerator_waste",
+     "zone": "red",
+     "x": 53.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "admin_data",
+     "zone": "green",
+     "x": 0,
+     "y": 0.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "lab",
+     "zone": "green",
+     "x": 0,
+     "y": 6.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "pharmacy",
+     "zone": "green",
+     "x": 0,
+     "y": 12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "stores",
+     "zone": "green",
+     "x": 0,
+     "y": 18.0,
+     "w": 12.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_rest",
+     "zone": "green",
+     "x": 0,
+     "y": 30.0,
+     "w": 12.0,
+     "h": 18.0,
+     "kind": "space"
+    },
+    {
+     "name": "water_treatment",
+     "zone": "service",
+     "x": 0.0,
+     "y": -12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "generator",
+     "zone": "service",
+     "x": 18.0,
+     "y": -12.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "loading_zone",
+     "zone": "service",
+     "x": 30.0,
+     "y": -18.0,
+     "w": 18.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_dormitory",
+     "zone": "service",
+     "x": 71.0,
+     "y": 0,
+     "w": 54.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "burial_area",
+     "zone": "service",
+     "x": 71.0,
+     "y": 60.0,
+     "w": 48.0,
+     "h": 18.0,
+     "kind": "space"
+    }
+   ],
+   "patient_flow": [
+    [
+     19.0,
+     3.0
+    ],
+    [
+     50.5,
+     3.0
+    ],
+    [
+     50.5,
+     18.0
+    ],
+    [
+     50.5,
+     39.0
+    ],
+    [
+     50.5,
+     60.0
+    ],
+    [
+     50.5,
+     75.0
+    ]
+   ],
+   "rows": [
+    {
+     "ward": "suspect",
+     "y": 9.0,
+     "modules": 2
+    },
+    {
+     "ward": "probable",
+     "y": 30.0,
+     "modules": 2
+    },
+    {
+     "ward": "confirmed",
+     "y": 51.0,
+     "modules": 5
+    }
+   ],
+   "fences": {
+    "outer": [
+     -6.0,
+     -6.0,
+     71.0,
+     90.0
+    ],
+    "red_inner": [
+     12.5,
+     7.5,
+     47.0,
+     70.5
+    ]
+   },
+   "extent": [
+    0,
+    -18.0,
+    125.0,
+    78.0
+   ],
+   "placement": {
+    "rotation_deg": -25.1,
+    "mirrored": false,
+    "road_m": 631
+   }
+  },
+  {
+   "site_id": "S3",
+   "rects": [
+    {
+     "name": "triage",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 0.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "family_visiting",
+     "zone": "amber",
+     "x": 25.0,
+     "y": 0.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "donning_suspect_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 15.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_suspect_1",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 21.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "suspect_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "donning_probable_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 36.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_probable_2",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 42.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "probable_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "donning_confirmed_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 57.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_confirmed_3",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 63.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "confirmed_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M3",
+     "zone": "red",
+     "x": 31.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M4",
+     "zone": "red",
+     "x": 37.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "patient_corridor",
+     "zone": "red",
+     "x": 43.0,
+     "y": 6.0,
+     "w": 3.0,
+     "h": 63.0,
+     "kind": "corridor"
+    },
+    {
+     "name": "patient_discharge",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "laundry",
+     "zone": "amber",
+     "x": 19.0,
+     "y": 72.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "morgue",
+     "zone": "red",
+     "x": 40.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "incinerator_waste",
+     "zone": "red",
+     "x": 47.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "admin_data",
+     "zone": "green",
+     "x": 0,
+     "y": 0.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "lab",
+     "zone": "green",
+     "x": 0,
+     "y": 6.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "pharmacy",
+     "zone": "green",
+     "x": 0,
+     "y": 12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "stores",
+     "zone": "green",
+     "x": 0,
+     "y": 18.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_rest",
+     "zone": "green",
+     "x": 0,
+     "y": 24.0,
+     "w": 12.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "water_treatment",
+     "zone": "service",
+     "x": 0.0,
+     "y": -12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "generator",
+     "zone": "service",
+     "x": 18.0,
+     "y": -12.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "loading_zone",
+     "zone": "service",
+     "x": 30.0,
+     "y": -18.0,
+     "w": 18.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_dormitory",
+     "zone": "service",
+     "x": 65.0,
+     "y": 0,
+     "w": 42.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "burial_area",
+     "zone": "service",
+     "x": 65.0,
+     "y": 60.0,
+     "w": 36.0,
+     "h": 18.0,
+     "kind": "space"
+    }
+   ],
+   "patient_flow": [
+    [
+     19.0,
+     3.0
+    ],
+    [
+     44.5,
+     3.0
+    ],
+    [
+     44.5,
+     18.0
+    ],
+    [
+     44.5,
+     39.0
+    ],
+    [
+     44.5,
+     60.0
+    ],
+    [
+     44.5,
+     75.0
+    ]
+   ],
+   "rows": [
+    {
+     "ward": "suspect",
+     "y": 9.0,
+     "modules": 2
+    },
+    {
+     "ward": "probable",
+     "y": 30.0,
+     "modules": 1
+    },
+    {
+     "ward": "confirmed",
+     "y": 51.0,
+     "modules": 4
+    }
+   ],
+   "fences": {
+    "outer": [
+     -6.0,
+     -6.0,
+     65.0,
+     90.0
+    ],
+    "red_inner": [
+     12.5,
+     7.5,
+     41.0,
+     70.5
+    ]
+   },
+   "extent": [
+    0,
+    -18.0,
+    107.0,
+    78.0
+   ],
+   "placement": {
+    "rotation_deg": 132.1,
+    "mirrored": true,
+    "road_m": 120
+   }
+  },
+  {
+   "site_id": "S4",
+   "rects": [
+    {
+     "name": "triage",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 0.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "family_visiting",
+     "zone": "amber",
+     "x": 25.0,
+     "y": 0.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "donning_suspect_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_1",
+     "zone": "green",
+     "x": 13.0,
+     "y": 15.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_suspect_1",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 21.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "suspect_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "suspect_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 9.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "suspect",
+     "beds": 12
+    },
+    {
+     "name": "donning_probable_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_2",
+     "zone": "green",
+     "x": 13.0,
+     "y": 36.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_probable_2",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 42.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "probable_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 30.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "probable",
+     "beds": 12
+    },
+    {
+     "name": "donning_confirmed_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "donning"
+    },
+    {
+     "name": "ppe_store_3",
+     "zone": "green",
+     "x": 13.0,
+     "y": 57.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "store"
+    },
+    {
+     "name": "doffing_confirmed_3",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 63.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "doffing"
+    },
+    {
+     "name": "confirmed_M1",
+     "zone": "red",
+     "x": 19.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M2",
+     "zone": "red",
+     "x": 25.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M3",
+     "zone": "red",
+     "x": 31.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "confirmed_M4",
+     "zone": "red",
+     "x": 37.0,
+     "y": 51.0,
+     "w": 6.0,
+     "h": 18.0,
+     "kind": "ward_module",
+     "ward": "confirmed",
+     "beds": 12
+    },
+    {
+     "name": "patient_corridor",
+     "zone": "red",
+     "x": 43.0,
+     "y": 6.0,
+     "w": 3.0,
+     "h": 63.0,
+     "kind": "corridor"
+    },
+    {
+     "name": "patient_discharge",
+     "zone": "amber",
+     "x": 13.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "laundry",
+     "zone": "amber",
+     "x": 19.0,
+     "y": 72.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "morgue",
+     "zone": "red",
+     "x": 40.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "incinerator_waste",
+     "zone": "red",
+     "x": 47.0,
+     "y": 72.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "admin_data",
+     "zone": "green",
+     "x": 0,
+     "y": 0.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "lab",
+     "zone": "green",
+     "x": 0,
+     "y": 6.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "pharmacy",
+     "zone": "green",
+     "x": 0,
+     "y": 12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "stores",
+     "zone": "green",
+     "x": 0,
+     "y": 18.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_rest",
+     "zone": "green",
+     "x": 0,
+     "y": 24.0,
+     "w": 12.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "water_treatment",
+     "zone": "service",
+     "x": 0.0,
+     "y": -12.0,
+     "w": 12.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "generator",
+     "zone": "service",
+     "x": 18.0,
+     "y": -12.0,
+     "w": 6.0,
+     "h": 6.0,
+     "kind": "space"
+    },
+    {
+     "name": "loading_zone",
+     "zone": "service",
+     "x": 30.0,
+     "y": -18.0,
+     "w": 18.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "staff_dormitory",
+     "zone": "service",
+     "x": 65.0,
+     "y": 0,
+     "w": 42.0,
+     "h": 12.0,
+     "kind": "space"
+    },
+    {
+     "name": "burial_area",
+     "zone": "service",
+     "x": 65.0,
+     "y": 60.0,
+     "w": 36.0,
+     "h": 18.0,
+     "kind": "space"
+    }
+   ],
+   "patient_flow": [
+    [
+     19.0,
+     3.0
+    ],
+    [
+     44.5,
+     3.0
+    ],
+    [
+     44.5,
+     18.0
+    ],
+    [
+     44.5,
+     39.0
+    ],
+    [
+     44.5,
+     60.0
+    ],
+    [
+     44.5,
+     75.0
+    ]
+   ],
+   "rows": [
+    {
+     "ward": "suspect",
+     "y": 9.0,
+     "modules": 2
+    },
+    {
+     "ward": "probable",
+     "y": 30.0,
+     "modules": 1
+    },
+    {
+     "ward": "confirmed",
+     "y": 51.0,
+     "modules": 4
+    }
+   ],
+   "fences": {
+    "outer": [
+     -6.0,
+     -6.0,
+     65.0,
+     90.0
+    ],
+    "red_inner": [
+     12.5,
+     7.5,
+     41.0,
+     70.5
+    ]
+   },
+   "extent": [
+    0,
+    -18.0,
+    107.0,
+    78.0
+   ],
+   "placement": {
+    "rotation_deg": 236.1,
+    "mirrored": true,
+    "road_m": 348
+   }
+  }
+ ]
+}

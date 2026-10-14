@@ -1,0 +1,9 @@
+# Obsidian vault settings and plugins (not part of the project)
+.obsidian/
+.trash/
+# local Python, caches and large downloads
+.venv/
+__pycache__/
+rework/data/raw/
+rework/data/user/
+rework/web/dist/

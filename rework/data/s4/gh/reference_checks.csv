@@ -1,0 +1,5 @@
+site_id,beds,fence_w,fence_h,staff_walk_m,patient_path_m,ok
+S1,216,77,111,30.5,124.5,True
+S2,108,71,90,30.5,103.5,True
+S3,84,65,90,24.5,97.5,True
+S4,84,65,90,24.5,97.5,True

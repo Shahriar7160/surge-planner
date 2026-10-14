@@ -1,0 +1,101 @@
+name,prefecture,result,detail
+PS de Dawa Centre,KISSIDOUGOU,unmatched,
+PS de Kero Centre,KISSIDOUGOU,village_match,Kéro (hamlet)
+PS de Mantrania centre,KISSIDOUGOU,unmatched,
+PS de Mafendou centre,KISSIDOUGOU,village_match,Mafendou (hamlet)
+CSR de Bardou centre,KISSIDOUGOU,village_match,Bardou (village)
+PS de Yaadou Centre,KISSIDOUGOU,unmatched,
+PS de Soffedou centre,KISSIDOUGOU,unmatched,
+Ps de Gbangbadou Ouéndé centre,KISSIDOUGOU,village_match,Ouendé (hamlet)
+PS de Kondian centre,KISSIDOUGOU,unmatched,
+PS de Foniadou centre,KISSIDOUGOU,village_match,Foniadou (hamlet)
+CSR De Yalemba,KISSIDOUGOU,unmatched,
+CSU de Dar-Es-Salam,KISSIDOUGOU,unmatched,
+PS de Boué Centre,KISSIDOUGOU,unmatched,
+PS de Massakondou centre,KISSIDOUGOU,unmatched,
+PS de Yaradou centre,KISSIDOUGOU,unmatched,
+PS de Ouéndebendou,KISSIDOUGOU,unmatched,
+Dispensaire Catholic de Brouadou,KISSIDOUGOU,unmatched,
+Clinic Sainte-Marie de Korodou,KISSIDOUGOU,village_match,Korodou (suburb)
+CSR de Gbangbadou Centre,KISSIDOUGOU,unmatched,
+PS de Yallakala centre,KISSIDOUGOU,unmatched,
+PS de Yardo centre,KISSIDOUGOU,village_match,Yardo (village)
+PS de Gbayan centre,KISSIDOUGOU,unmatched,
+PS de Niandou centre,KISSIDOUGOU,village_match,Niandou (hamlet)
+PS de Dawa centre,KISSIDOUGOU,unmatched,
+PS de Fourdou centre,KISSIDOUGOU,unmatched,
+PS de Hèrako centre,KISSIDOUGOU,unmatched,
+CSU de Hermakono,KISSIDOUGOU,unmatched,
+PS de Bongoro Centre,KISSIDOUGOU,village_match,Bongoro (hamlet)
+PS de Makolon Centre,KISSIDOUGOU,village_match,Makolon (hamlet)
+PS de Mafendou Centre,KISSIDOUGOU,village_match,Mafendou (hamlet)
+PS de Soulakoro Centre,KISSIDOUGOU,unmatched,
+PS de Balansama centre,KISSIDOUGOU,unmatched,
+CSU de Lymania Centre,KISSIDOUGOU,unmatched,
+PS de Korodou centre,KISSIDOUGOU,village_match,Korodou (suburb)
+PS de Bambadou Centre,KISSIDOUGOU,village_match,Bambadou (hamlet)
+CSU Sogbè centre,KISSIDOUGOU,unmatched,
+CSU de Madina centre,KISSIDOUGOU,unmatched,
+CSR de Sangardo Centre,KISSIDOUGOU,village_match,Sangardo (town)
+PS de Wossokoroma centre,KISSIDOUGOU,unmatched,
+PS de Foreyah Centre,KISSIDOUGOU,unmatched,
+PS de Borokoro centre,KISSIDOUGOU,village_match,Borokoro (hamlet)
+PS de Dagnoro centre,KISSIDOUGOU,unmatched,
+Ps de Kemerendou centre,KISSIDOUGOU,unmatched,
+PS de Wondeto centre,KISSIDOUGOU,unmatched,
+PS de Firadou centre,KISSIDOUGOU,unmatched,
+PS de Forordou centre,KISSIDOUGOU,unmatched,
+PS de Bambakorodou centre,KISSIDOUGOU,unmatched,
+PS de Koindou centre,KISSIDOUGOU,unmatched,
+PS Yaradou Doumbo,GUECKEDOU,unmatched,
+PS Tomandou,GUECKEDOU,village_match,Tomandou (village)
+CSR Ouladin,GUECKEDOU,unmatched,
+Clinique privée petite sœur Guinée,GUECKEDOU,unmatched,
+AGBEF,GUECKEDOU,unmatched,
+Clinique Tomandou,GUECKEDOU,village_match,Tomandou (village)
+Cabinet Soins KEITA,GUECKEDOU,unmatched,
+CSU kerouané,KEROUANE,village_match,Kérouané (town)
+CSR Komodou,KEROUANE,unmatched,
+CSR Banankoro,KEROUANE,village_match,Banankoro (town)
+CSR Konsankoro,KEROUANE,village_match,Konsankoro (hamlet)
+HP Kerouané,KEROUANE,village_match,Kérouané (town)
+Hôpital Préfectoral de Guéckédou,GUECKEDOU,town_centre,Guéckédou town point (OSM 2014)
+Clinique privée petite sœur Guinée,GUECKEDOU,synthetic,urban: near Guéckédou town centre
+AGBEF,GUECKEDOU,synthetic,urban: near Guéckédou town centre
+Cabinet Soins KEITA,GUECKEDOU,synthetic,urban: near Guéckédou town centre
+PS Yaradou Doumbo,GUECKEDOU,synthetic,"rural: at Kpukema (5,894 people, no facility within 5 km)"
+CSR Ouladin,GUECKEDOU,synthetic,"rural: at Bandeineen (2,460 people, no facility within 5 km)"
+CSR Komodou,KEROUANE,not placed,outside window share (33% of prefecture inside)
+CSU de Dar-Es-Salam,KISSIDOUGOU,synthetic,urban: near Kissidougou town centre
+Dispensaire Catholic de Brouadou,KISSIDOUGOU,synthetic,urban: near Kissidougou town centre
+CSU de Hermakono,KISSIDOUGOU,synthetic,urban: near Kissidougou town centre
+CSU de Lymania Centre,KISSIDOUGOU,synthetic,urban: near Kissidougou town centre
+CSU Sogbè centre,KISSIDOUGOU,synthetic,urban: near Kissidougou town centre
+CSU de Madina centre,KISSIDOUGOU,synthetic,urban: near Kissidougou town centre
+PS de Dawa Centre,KISSIDOUGOU,synthetic,"rural: at Dandou (2,258 people, no facility within 5 km)"
+PS de Mantrania centre,KISSIDOUGOU,synthetic,"rural: at Dendaladou (1,305 people, no facility within 5 km)"
+PS de Yaadou Centre,KISSIDOUGOU,synthetic,"rural: at Douadou (904 people, no facility within 5 km)"
+PS de Soffedou centre,KISSIDOUGOU,synthetic,"rural: at Massakoundou (785 people, no facility within 5 km)"
+PS de Kondian centre,KISSIDOUGOU,synthetic,"rural: at Wankéi (783 people, no facility within 5 km)"
+CSR De Yalemba,KISSIDOUGOU,synthetic,"rural: at Tédou (751 people, no facility within 5 km)"
+PS de Boué Centre,KISSIDOUGOU,synthetic,"rural: at Kofoudou (649 people, no facility within 5 km)"
+PS de Massakondou centre,KISSIDOUGOU,synthetic,"rural: at Danbaya (629 people, no facility within 5 km)"
+PS de Yaradou centre,KISSIDOUGOU,synthetic,"rural: at Bayan (560 people, no facility within 5 km)"
+PS de Ouéndebendou,KISSIDOUGOU,synthetic,"rural: at Massacoundou (488 people, no facility within 5 km)"
+CSR de Gbangbadou Centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Yallakala centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Gbayan centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Dawa centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Fourdou centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Hèrako centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Soulakoro Centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Balansama centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Wossokoroma centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Foreyah Centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Dagnoro centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+Ps de Kemerendou centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Wondeto centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Firadou centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Forordou centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Bambakorodou centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)
+PS de Koindou centre,KISSIDOUGOU,not placed,outside window share (48% of prefecture inside)

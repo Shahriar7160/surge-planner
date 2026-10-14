@@ -1,0 +1,5 @@
+site_id,near,modules_suspect,modules_probable,modules_confirmed,beds_total,area_triage,area_family_visiting,area_laundry,area_morgue,area_incinerator_waste,area_admin_data,area_lab,area_pharmacy,area_stores,area_staff_rest,area_water_treatment,area_generator,area_loading_zone,area_staff_dormitory,area_burial_area,rotation_deg,mirrored,lon,lat
+S1,Fokodoumandou,5,3,10,216,116.4,30,106.4,72,46.6,41.6,40,84.8,138.0,334.5,40,25,150,1206,1944.0,37.0,0,-9.469427951649624,8.522293569684267
+S2,Kagbadou,2,2,5,108,73.2,30,63.2,36,35.8,30.8,40,52.4,84.0,174.0,40,25,150,624,788.4,-25.1,0,-10.146306867189544,8.526815591932616
+S3,Kouankan,2,1,4,84,63.6,30,53.6,30,33.4,28.4,40,45.2,72.0,138.0,40,25,150,498,640.1,132.1,1,-9.110545842068056,8.427331102468946
+S4,N'Zébéla,2,1,4,84,63.6,30,53.6,30,33.4,28.4,40,45.2,72.0,138.0,40,25,150,498,600.1,236.1,1,-9.106003030554366,8.11531156733289

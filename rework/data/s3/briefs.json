@@ -1,0 +1,833 @@
+{
+ "meta": {
+  "generated_by": "pipeline/s3_run.py",
+  "ratios": "pipeline/s3_params.py (DRAFT, to verify)",
+  "beds_per_module": 12
+ },
+ "sites": [
+  {
+   "site_id": "S1",
+   "near": "Fokodoumandou",
+   "lon": -9.469427951649624,
+   "lat": 8.522293569684267,
+   "peak_confirmed_beds": 120.0,
+   "isolation_beds_needed": 200.0,
+   "wards": [
+    {
+     "ward": "suspect",
+     "risk": "high",
+     "beds_needed": 50.0,
+     "modules": 5,
+     "beds": 60,
+     "note": "awaiting test result; single bays preferred"
+    },
+    {
+     "ward": "probable",
+     "risk": "high",
+     "beds_needed": 30.0,
+     "modules": 3,
+     "beds": 36,
+     "note": "symptomatic, epidemiological link, awaiting confirmation"
+    },
+    {
+     "ward": "confirmed",
+     "risk": "high",
+     "beds_needed": 120.0,
+     "modules": 10,
+     "beds": 120,
+     "note": "laboratory-confirmed cases"
+    }
+   ],
+   "modules_total": 18,
+   "beds_total": 216,
+   "staff": {
+    "clinical_confirmed": 240,
+    "clinical_suspect_probable": 96,
+    "hygiene": 220,
+    "lab": 11,
+    "pharmacy_logistics": 69,
+    "admin_psychosocial": 26,
+    "security": 6
+   },
+   "staff_total": 668,
+   "staff_per_shift": 223,
+   "staff_resident": 201,
+   "supplies": {
+    "water_l_day": 119800,
+    "power_kw": 231,
+    "medical_waste_kg_day": 1728,
+    "ppe_sets_day": 672,
+    "chlorine_l_day": 4320
+   },
+   "spaces": [
+    {
+     "space": "triage",
+     "zone": "amber",
+     "area_m2": 116.4,
+     "note": "screening at the single patient entrance"
+    },
+    {
+     "space": "ward_suspect",
+     "zone": "red",
+     "area_m2": 540.0,
+     "note": "9 m² per bed incl. aisle"
+    },
+    {
+     "space": "ward_probable",
+     "zone": "red",
+     "area_m2": 324.0,
+     "note": ""
+    },
+    {
+     "space": "ward_confirmed",
+     "zone": "red",
+     "area_m2": 1080.0,
+     "note": ""
+    },
+    {
+     "space": "donning",
+     "zone": "green",
+     "area_m2": 45,
+     "note": "one dressing room per ward"
+    },
+    {
+     "space": "doffing_decon",
+     "zone": "amber",
+     "area_m2": 60,
+     "note": "undressing + chlorine showers, one per ward"
+    },
+    {
+     "space": "patient_discharge",
+     "zone": "amber",
+     "area_m2": 12,
+     "note": "shower and clean clothes for recovered patients"
+    },
+    {
+     "space": "morgue",
+     "zone": "red",
+     "area_m2": 72,
+     "note": "≈ 1 place per 10 confirmed beds × 6 m²"
+    },
+    {
+     "space": "lab",
+     "zone": "green",
+     "area_m2": 40,
+     "note": "PCR lab, sample reception from the red side"
+    },
+    {
+     "space": "pharmacy",
+     "zone": "green",
+     "area_m2": 84.8,
+     "note": ""
+    },
+    {
+     "space": "stores",
+     "zone": "green",
+     "area_m2": 138.0,
+     "note": "PPE, consumables"
+    },
+    {
+     "space": "laundry",
+     "zone": "amber",
+     "area_m2": 106.4,
+     "note": ""
+    },
+    {
+     "space": "staff_rest",
+     "zone": "green",
+     "area_m2": 334.5,
+     "note": "computed: 1.5 m² per person on shift"
+    },
+    {
+     "space": "staff_dormitory",
+     "zone": "service",
+     "area_m2": 1206,
+     "note": "computed: 6 m² per resident staff"
+    },
+    {
+     "space": "admin_data",
+     "zone": "green",
+     "area_m2": 41.6,
+     "note": ""
+    },
+    {
+     "space": "family_visiting",
+     "zone": "amber",
+     "area_m2": 30,
+     "note": "talk across the double fence"
+    },
+    {
+     "space": "water_treatment",
+     "zone": "service",
+     "area_m2": 40,
+     "note": "bladder tanks + chlorination (2015 water filtering cycle)"
+    },
+    {
+     "space": "generator",
+     "zone": "service",
+     "area_m2": 25,
+     "note": ""
+    },
+    {
+     "space": "incinerator_waste",
+     "zone": "red",
+     "area_m2": 46.6,
+     "note": "downwind, inside the red perimeter"
+    },
+    {
+     "space": "loading_zone",
+     "zone": "service",
+     "area_m2": 150,
+     "note": "truck turning and unloading"
+    },
+    {
+     "space": "burial_area",
+     "zone": "service",
+     "area_m2": 1944.0,
+     "note": "computed: 3 m² per expected death over 90 days"
+    }
+   ],
+   "area": {
+    "built_net_m2": 3136,
+    "built_gross_m2": 4077,
+    "plot_m2": 14949,
+    "plot_side_m": 122,
+    "buildable_within_300m_m2": 242351,
+    "fits": true
+   },
+   "sequence": [
+    "triage",
+    "ward_suspect",
+    "ward_probable",
+    "ward_confirmed",
+    "morgue|patient_discharge"
+   ],
+   "rules": {
+    "one_way_routes": true,
+    "fence": "double, 1.0 m apart",
+    "red_to_green_only_via": "doffing_decon",
+    "incinerator": "downwind, red zone",
+    "staff_entry": "green → donning → red",
+    "patient_entry": "triage only"
+   }
+  },
+  {
+   "site_id": "S2",
+   "near": "Kagbadou",
+   "lon": -10.146306867189544,
+   "lat": 8.526815591932616,
+   "peak_confirmed_beds": 48.7,
+   "isolation_beds_needed": 81.1,
+   "wards": [
+    {
+     "ward": "suspect",
+     "risk": "high",
+     "beds_needed": 20.3,
+     "modules": 2,
+     "beds": 24,
+     "note": "awaiting test result; single bays preferred"
+    },
+    {
+     "ward": "probable",
+     "risk": "high",
+     "beds_needed": 12.2,
+     "modules": 2,
+     "beds": 24,
+     "note": "symptomatic, epidemiological link, awaiting confirmation"
+    },
+    {
+     "ward": "confirmed",
+     "risk": "high",
+     "beds_needed": 48.7,
+     "modules": 5,
+     "beds": 60,
+     "note": "laboratory-confirmed cases"
+    }
+   ],
+   "modules_total": 9,
+   "beds_total": 108,
+   "staff": {
+    "clinical_confirmed": 120,
+    "clinical_suspect_probable": 48,
+    "hygiene": 112,
+    "lab": 8,
+    "pharmacy_logistics": 37,
+    "admin_psychosocial": 15,
+    "security": 6
+   },
+   "staff_total": 346,
+   "staff_per_shift": 116,
+   "staff_resident": 104,
+   "supplies": {
+    "water_l_day": 60500,
+    "power_kw": 123,
+    "medical_waste_kg_day": 864,
+    "ppe_sets_day": 336,
+    "chlorine_l_day": 2160
+   },
+   "spaces": [
+    {
+     "space": "triage",
+     "zone": "amber",
+     "area_m2": 73.2,
+     "note": "screening at the single patient entrance"
+    },
+    {
+     "space": "ward_suspect",
+     "zone": "red",
+     "area_m2": 216.0,
+     "note": "9 m² per bed incl. aisle"
+    },
+    {
+     "space": "ward_probable",
+     "zone": "red",
+     "area_m2": 216.0,
+     "note": ""
+    },
+    {
+     "space": "ward_confirmed",
+     "zone": "red",
+     "area_m2": 540.0,
+     "note": ""
+    },
+    {
+     "space": "donning",
+     "zone": "green",
+     "area_m2": 45,
+     "note": "one dressing room per ward"
+    },
+    {
+     "space": "doffing_decon",
+     "zone": "amber",
+     "area_m2": 60,
+     "note": "undressing + chlorine showers, one per ward"
+    },
+    {
+     "space": "patient_discharge",
+     "zone": "amber",
+     "area_m2": 12,
+     "note": "shower and clean clothes for recovered patients"
+    },
+    {
+     "space": "morgue",
+     "zone": "red",
+     "area_m2": 36,
+     "note": "≈ 1 place per 10 confirmed beds × 6 m²"
+    },
+    {
+     "space": "lab",
+     "zone": "green",
+     "area_m2": 40,
+     "note": "PCR lab, sample reception from the red side"
+    },
+    {
+     "space": "pharmacy",
+     "zone": "green",
+     "area_m2": 52.4,
+     "note": ""
+    },
+    {
+     "space": "stores",
+     "zone": "green",
+     "area_m2": 84.0,
+     "note": "PPE, consumables"
+    },
+    {
+     "space": "laundry",
+     "zone": "amber",
+     "area_m2": 63.2,
+     "note": ""
+    },
+    {
+     "space": "staff_rest",
+     "zone": "green",
+     "area_m2": 174.0,
+     "note": "computed: 1.5 m² per person on shift"
+    },
+    {
+     "space": "staff_dormitory",
+     "zone": "service",
+     "area_m2": 624,
+     "note": "computed: 6 m² per resident staff"
+    },
+    {
+     "space": "admin_data",
+     "zone": "green",
+     "area_m2": 30.8,
+     "note": ""
+    },
+    {
+     "space": "family_visiting",
+     "zone": "amber",
+     "area_m2": 30,
+     "note": "talk across the double fence"
+    },
+    {
+     "space": "water_treatment",
+     "zone": "service",
+     "area_m2": 40,
+     "note": "bladder tanks + chlorination (2015 water filtering cycle)"
+    },
+    {
+     "space": "generator",
+     "zone": "service",
+     "area_m2": 25,
+     "note": ""
+    },
+    {
+     "space": "incinerator_waste",
+     "zone": "red",
+     "area_m2": 35.8,
+     "note": "downwind, inside the red perimeter"
+    },
+    {
+     "space": "loading_zone",
+     "zone": "service",
+     "area_m2": 150,
+     "note": "truck turning and unloading"
+    },
+    {
+     "space": "burial_area",
+     "zone": "service",
+     "area_m2": 788.4,
+     "note": "computed: 3 m² per expected death over 90 days"
+    }
+   ],
+   "area": {
+    "built_net_m2": 1773,
+    "built_gross_m2": 2305,
+    "plot_m2": 8149,
+    "plot_side_m": 90,
+    "buildable_within_300m_m2": 253892,
+    "fits": true
+   },
+   "sequence": [
+    "triage",
+    "ward_suspect",
+    "ward_probable",
+    "ward_confirmed",
+    "morgue|patient_discharge"
+   ],
+   "rules": {
+    "one_way_routes": true,
+    "fence": "double, 1.0 m apart",
+    "red_to_green_only_via": "doffing_decon",
+    "incinerator": "downwind, red zone",
+    "staff_entry": "green → donning → red",
+    "patient_entry": "triage only"
+   }
+  },
+  {
+   "site_id": "S3",
+   "near": "Kouankan",
+   "lon": -9.110545842068056,
+   "lat": 8.427331102468946,
+   "peak_confirmed_beds": 39.5,
+   "isolation_beds_needed": 65.9,
+   "wards": [
+    {
+     "ward": "suspect",
+     "risk": "high",
+     "beds_needed": 16.5,
+     "modules": 2,
+     "beds": 24,
+     "note": "awaiting test result; single bays preferred"
+    },
+    {
+     "ward": "probable",
+     "risk": "high",
+     "beds_needed": 9.9,
+     "modules": 1,
+     "beds": 12,
+     "note": "symptomatic, epidemiological link, awaiting confirmation"
+    },
+    {
+     "ward": "confirmed",
+     "risk": "high",
+     "beds_needed": 39.5,
+     "modules": 4,
+     "beds": 48,
+     "note": "laboratory-confirmed cases"
+    }
+   ],
+   "modules_total": 7,
+   "beds_total": 84,
+   "staff": {
+    "clinical_confirmed": 96,
+    "clinical_suspect_probable": 36,
+    "hygiene": 88,
+    "lab": 7,
+    "pharmacy_logistics": 30,
+    "admin_psychosocial": 13,
+    "security": 6
+   },
+   "staff_total": 276,
+   "staff_per_shift": 92,
+   "staff_resident": 83,
+   "supplies": {
+    "water_l_day": 47400,
+    "power_kw": 99,
+    "medical_waste_kg_day": 672,
+    "ppe_sets_day": 264,
+    "chlorine_l_day": 1680
+   },
+   "spaces": [
+    {
+     "space": "triage",
+     "zone": "amber",
+     "area_m2": 63.6,
+     "note": "screening at the single patient entrance"
+    },
+    {
+     "space": "ward_suspect",
+     "zone": "red",
+     "area_m2": 216.0,
+     "note": "9 m² per bed incl. aisle"
+    },
+    {
+     "space": "ward_probable",
+     "zone": "red",
+     "area_m2": 108.0,
+     "note": ""
+    },
+    {
+     "space": "ward_confirmed",
+     "zone": "red",
+     "area_m2": 432.0,
+     "note": ""
+    },
+    {
+     "space": "donning",
+     "zone": "green",
+     "area_m2": 45,
+     "note": "one dressing room per ward"
+    },
+    {
+     "space": "doffing_decon",
+     "zone": "amber",
+     "area_m2": 60,
+     "note": "undressing + chlorine showers, one per ward"
+    },
+    {
+     "space": "patient_discharge",
+     "zone": "amber",
+     "area_m2": 12,
+     "note": "shower and clean clothes for recovered patients"
+    },
+    {
+     "space": "morgue",
+     "zone": "red",
+     "area_m2": 30,
+     "note": "≈ 1 place per 10 confirmed beds × 6 m²"
+    },
+    {
+     "space": "lab",
+     "zone": "green",
+     "area_m2": 40,
+     "note": "PCR lab, sample reception from the red side"
+    },
+    {
+     "space": "pharmacy",
+     "zone": "green",
+     "area_m2": 45.2,
+     "note": ""
+    },
+    {
+     "space": "stores",
+     "zone": "green",
+     "area_m2": 72.0,
+     "note": "PPE, consumables"
+    },
+    {
+     "space": "laundry",
+     "zone": "amber",
+     "area_m2": 53.6,
+     "note": ""
+    },
+    {
+     "space": "staff_rest",
+     "zone": "green",
+     "area_m2": 138.0,
+     "note": "computed: 1.5 m² per person on shift"
+    },
+    {
+     "space": "staff_dormitory",
+     "zone": "service",
+     "area_m2": 498,
+     "note": "computed: 6 m² per resident staff"
+    },
+    {
+     "space": "admin_data",
+     "zone": "green",
+     "area_m2": 28.4,
+     "note": ""
+    },
+    {
+     "space": "family_visiting",
+     "zone": "amber",
+     "area_m2": 30,
+     "note": "talk across the double fence"
+    },
+    {
+     "space": "water_treatment",
+     "zone": "service",
+     "area_m2": 40,
+     "note": "bladder tanks + chlorination (2015 water filtering cycle)"
+    },
+    {
+     "space": "generator",
+     "zone": "service",
+     "area_m2": 25,
+     "note": ""
+    },
+    {
+     "space": "incinerator_waste",
+     "zone": "red",
+     "area_m2": 33.4,
+     "note": "downwind, inside the red perimeter"
+    },
+    {
+     "space": "loading_zone",
+     "zone": "service",
+     "area_m2": 150,
+     "note": "truck turning and unloading"
+    },
+    {
+     "space": "burial_area",
+     "zone": "service",
+     "area_m2": 640.1,
+     "note": "computed: 3 m² per expected death over 90 days"
+    }
+   ],
+   "area": {
+    "built_net_m2": 1472,
+    "built_gross_m2": 1914,
+    "plot_m2": 6756,
+    "plot_side_m": 82,
+    "buildable_within_300m_m2": 155797,
+    "fits": true
+   },
+   "sequence": [
+    "triage",
+    "ward_suspect",
+    "ward_probable",
+    "ward_confirmed",
+    "morgue|patient_discharge"
+   ],
+   "rules": {
+    "one_way_routes": true,
+    "fence": "double, 1.0 m apart",
+    "red_to_green_only_via": "doffing_decon",
+    "incinerator": "downwind, red zone",
+    "staff_entry": "green → donning → red",
+    "patient_entry": "triage only"
+   }
+  },
+  {
+   "site_id": "S4",
+   "near": "N'Zébéla",
+   "lon": -9.106003030554366,
+   "lat": 8.11531156733289,
+   "peak_confirmed_beds": 37.0,
+   "isolation_beds_needed": 61.7,
+   "wards": [
+    {
+     "ward": "suspect",
+     "risk": "high",
+     "beds_needed": 15.4,
+     "modules": 2,
+     "beds": 24,
+     "note": "awaiting test result; single bays preferred"
+    },
+    {
+     "ward": "probable",
+     "risk": "high",
+     "beds_needed": 9.3,
+     "modules": 1,
+     "beds": 12,
+     "note": "symptomatic, epidemiological link, awaiting confirmation"
+    },
+    {
+     "ward": "confirmed",
+     "risk": "high",
+     "beds_needed": 37.0,
+     "modules": 4,
+     "beds": 48,
+     "note": "laboratory-confirmed cases"
+    }
+   ],
+   "modules_total": 7,
+   "beds_total": 84,
+   "staff": {
+    "clinical_confirmed": 96,
+    "clinical_suspect_probable": 36,
+    "hygiene": 88,
+    "lab": 7,
+    "pharmacy_logistics": 30,
+    "admin_psychosocial": 13,
+    "security": 6
+   },
+   "staff_total": 276,
+   "staff_per_shift": 92,
+   "staff_resident": 83,
+   "supplies": {
+    "water_l_day": 47400,
+    "power_kw": 99,
+    "medical_waste_kg_day": 672,
+    "ppe_sets_day": 264,
+    "chlorine_l_day": 1680
+   },
+   "spaces": [
+    {
+     "space": "triage",
+     "zone": "amber",
+     "area_m2": 63.6,
+     "note": "screening at the single patient entrance"
+    },
+    {
+     "space": "ward_suspect",
+     "zone": "red",
+     "area_m2": 216.0,
+     "note": "9 m² per bed incl. aisle"
+    },
+    {
+     "space": "ward_probable",
+     "zone": "red",
+     "area_m2": 108.0,
+     "note": ""
+    },
+    {
+     "space": "ward_confirmed",
+     "zone": "red",
+     "area_m2": 432.0,
+     "note": ""
+    },
+    {
+     "space": "donning",
+     "zone": "green",
+     "area_m2": 45,
+     "note": "one dressing room per ward"
+    },
+    {
+     "space": "doffing_decon",
+     "zone": "amber",
+     "area_m2": 60,
+     "note": "undressing + chlorine showers, one per ward"
+    },
+    {
+     "space": "patient_discharge",
+     "zone": "amber",
+     "area_m2": 12,
+     "note": "shower and clean clothes for recovered patients"
+    },
+    {
+     "space": "morgue",
+     "zone": "red",
+     "area_m2": 30,
+     "note": "≈ 1 place per 10 confirmed beds × 6 m²"
+    },
+    {
+     "space": "lab",
+     "zone": "green",
+     "area_m2": 40,
+     "note": "PCR lab, sample reception from the red side"
+    },
+    {
+     "space": "pharmacy",
+     "zone": "green",
+     "area_m2": 45.2,
+     "note": ""
+    },
+    {
+     "space": "stores",
+     "zone": "green",
+     "area_m2": 72.0,
+     "note": "PPE, consumables"
+    },
+    {
+     "space": "laundry",
+     "zone": "amber",
+     "area_m2": 53.6,
+     "note": ""
+    },
+    {
+     "space": "staff_rest",
+     "zone": "green",
+     "area_m2": 138.0,
+     "note": "computed: 1.5 m² per person on shift"
+    },
+    {
+     "space": "staff_dormitory",
+     "zone": "service",
+     "area_m2": 498,
+     "note": "computed: 6 m² per resident staff"
+    },
+    {
+     "space": "admin_data",
+     "zone": "green",
+     "area_m2": 28.4,
+     "note": ""
+    },
+    {
+     "space": "family_visiting",
+     "zone": "amber",
+     "area_m2": 30,
+     "note": "talk across the double fence"
+    },
+    {
+     "space": "water_treatment",
+     "zone": "service",
+     "area_m2": 40,
+     "note": "bladder tanks + chlorination (2015 water filtering cycle)"
+    },
+    {
+     "space": "generator",
+     "zone": "service",
+     "area_m2": 25,
+     "note": ""
+    },
+    {
+     "space": "incinerator_waste",
+     "zone": "red",
+     "area_m2": 33.4,
+     "note": "downwind, inside the red perimeter"
+    },
+    {
+     "space": "loading_zone",
+     "zone": "service",
+     "area_m2": 150,
+     "note": "truck turning and unloading"
+    },
+    {
+     "space": "burial_area",
+     "zone": "service",
+     "area_m2": 600.1,
+     "note": "computed: 3 m² per expected death over 90 days"
+    }
+   ],
+   "area": {
+    "built_net_m2": 1472,
+    "built_gross_m2": 1914,
+    "plot_m2": 6716,
+    "plot_side_m": 82,
+    "buildable_within_300m_m2": 121176,
+    "fits": true
+   },
+   "sequence": [
+    "triage",
+    "ward_suspect",
+    "ward_probable",
+    "ward_confirmed",
+    "morgue|patient_discharge"
+   ],
+   "rules": {
+    "one_way_routes": true,
+    "fence": "double, 1.0 m apart",
+    "red_to_green_only_via": "doffing_decon",
+    "incinerator": "downwind, red zone",
+    "staff_entry": "green → donning → red",
+    "patient_entry": "triage only"
+   }
+  }
+ ]
+}

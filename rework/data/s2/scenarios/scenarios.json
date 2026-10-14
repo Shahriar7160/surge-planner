@@ -1,0 +1,416 @@
+[
+ {
+  "id": "baseline",
+  "title": "Baseline",
+  "what": "the settings in s2_params.py",
+  "coverage": 0.9748367533479316,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -10.14631,
+    "lat": 8.52682,
+    "beds_demand": 61.62589,
+    "modules": 6,
+    "score": 0.93522,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.46943,
+    "lat": 8.52229,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.81847,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.11055,
+    "lat": 8.42733,
+    "beds_demand": 39.51258,
+    "modules": 4,
+    "score": 0.53426,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.106,
+    "lat": 8.11531,
+    "beds_demand": 37.04238,
+    "modules": 4,
+    "score": 0.42909,
+    "shift_km": 0.0,
+    "moved": false
+   }
+  ],
+  "sites_moved": 0
+ },
+ {
+  "id": "fast",
+  "title": "Faster access",
+  "what": "patients must reach a site within 45 min (not 1.5 h)",
+  "coverage": 0.8241774503601305,
+  "K": 4,
+  "limit_h": 0.75,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -9.50577,
+    "lat": 8.53586,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.83104,
+    "shift_km": 4.3,
+    "moved": true
+   },
+   {
+    "lon": -9.86465,
+    "lat": 8.57656,
+    "beds_demand": 60.52007,
+    "modules": 6,
+    "score": 0.60834,
+    "shift_km": 31.5,
+    "moved": true
+   },
+   {
+    "lon": -9.11055,
+    "lat": 8.42733,
+    "beds_demand": 23.65808,
+    "modules": 2,
+    "score": 0.53426,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.53757,
+    "lat": 8.83884,
+    "beds_demand": 14.10131,
+    "modules": 2,
+    "score": 0.446,
+    "shift_km": 35.8,
+    "moved": true
+   }
+  ],
+  "sites_moved": 3
+ },
+ {
+  "id": "rainy",
+  "title": "Rainy season",
+  "what": "travel times on rainy-season roads (tracks ×0.5, paths ×0.6)",
+  "coverage": 0.9469698683738106,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -10.14631,
+    "lat": 8.52682,
+    "beds_demand": 61.62589,
+    "modules": 6,
+    "score": 0.93522,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.424,
+    "lat": 8.55847,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.81714,
+    "shift_km": 6.4,
+    "moved": true
+   },
+   {
+    "lon": -9.53757,
+    "lat": 8.83884,
+    "beds_demand": 14.10131,
+    "modules": 2,
+    "score": 0.446,
+    "shift_km": 35.8,
+    "moved": true
+   },
+   {
+    "lon": -9.12417,
+    "lat": 8.14697,
+    "beds_demand": 55.07323,
+    "modules": 5,
+    "score": 0.38206,
+    "shift_km": 4.0,
+    "moved": true
+   }
+  ],
+  "sites_moved": 3
+ },
+ {
+  "id": "isolation",
+  "title": "Strict isolation",
+  "what": "sites ≥ 2 km from villages (not 500 m)",
+  "coverage": 0.9495470450279357,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 247,
+  "sites": [
+   {
+    "lon": -9.41946,
+    "lat": 8.56299,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.8156,
+    "shift_km": 7.1,
+    "moved": true
+   },
+   {
+    "lon": -9.94642,
+    "lat": 8.53134,
+    "beds_demand": 80.58798,
+    "modules": 7,
+    "score": 0.61165,
+    "shift_km": 22.0,
+    "moved": true
+   },
+   {
+    "lon": -9.106,
+    "lat": 8.11531,
+    "beds_demand": 36.7937,
+    "modules": 4,
+    "score": 0.4291,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.52848,
+    "lat": 8.83884,
+    "beds_demand": 14.10131,
+    "modules": 2,
+    "score": 0.40581,
+    "shift_km": 35.6,
+    "moved": true
+   }
+  ],
+  "sites_moved": 3
+ },
+ {
+  "id": "hospital",
+  "title": "Hospital-led",
+  "what": "SHOULD weight on 'near hospital' raised to 0.6",
+  "coverage": 0.9324012137560901,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -10.14631,
+    "lat": 8.52682,
+    "beds_demand": 19.86839,
+    "modules": 2,
+    "score": 0.95056,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -10.15994,
+    "lat": 8.54038,
+    "beds_demand": 18.58541,
+    "modules": 2,
+    "score": 0.92282,
+    "shift_km": 2.1,
+    "moved": true
+   },
+   {
+    "lon": -9.46943,
+    "lat": 8.52229,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.87034,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.44671,
+    "lat": 8.48612,
+    "beds_demand": 88.48821,
+    "modules": 8,
+    "score": 0.8257,
+    "shift_km": 4.7,
+    "moved": true
+   }
+  ],
+  "sites_moved": 2
+ },
+ {
+  "id": "community",
+  "title": "Community-first",
+  "what": "weights on community acceptance + waste downhill raised",
+  "coverage": 0.9559377015554441,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -10.14631,
+    "lat": 8.52682,
+    "beds_demand": 38.4538,
+    "modules": 4,
+    "score": 0.93771,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.46943,
+    "lat": 8.52229,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.84078,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.0742,
+    "lat": 8.53134,
+    "beds_demand": 15.26423,
+    "modules": 2,
+    "score": 0.78424,
+    "shift_km": 12.2,
+    "moved": true
+   },
+   {
+    "lon": -9.44671,
+    "lat": 8.48612,
+    "beds_demand": 79.4575,
+    "modules": 7,
+    "score": 0.71498,
+    "shift_km": 4.7,
+    "moved": true
+   }
+  ],
+  "sites_moved": 2
+ },
+ {
+  "id": "budget",
+  "title": "Tight budget",
+  "what": "only 2 treatment centres",
+  "coverage": 0.8820688662040249,
+  "K": 2,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -9.46943,
+    "lat": 8.52229,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.81847,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.86465,
+    "lat": 8.57656,
+    "beds_demand": 113.61172,
+    "modules": 10,
+    "score": 0.60834,
+    "shift_km": 31.5,
+    "moved": true
+   }
+  ],
+  "sites_moved": 1
+ },
+ {
+  "id": "early",
+  "title": "Early warning",
+  "what": "planning on 1 June 2014: demand for Jun–Aug only",
+  "coverage": 0.9658440836722951,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -10.14631,
+    "lat": 8.52682,
+    "beds_demand": 52.62396,
+    "modules": 5,
+    "score": 0.93522,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.46943,
+    "lat": 8.52229,
+    "beds_demand": 44.44575,
+    "modules": 4,
+    "score": 0.81847,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.44671,
+    "lat": 8.48612,
+    "beds_demand": 10.57175,
+    "modules": 1,
+    "score": 0.75598,
+    "shift_km": 4.7,
+    "moved": true
+   },
+   {
+    "lon": -9.06966,
+    "lat": 8.51325,
+    "beds_demand": 5.22706,
+    "modules": 1,
+    "score": 0.59028,
+    "shift_km": 10.5,
+    "moved": true
+   }
+  ],
+  "sites_moved": 2
+ },
+ {
+  "id": "border",
+  "title": "Cross-border",
+  "what": "weight on 'border flow' raised to 0.5",
+  "coverage": 0.9324012137560901,
+  "K": 4,
+  "limit_h": 1.5,
+  "candidates": 936,
+  "sites": [
+   {
+    "lon": -10.14631,
+    "lat": 8.52682,
+    "beds_demand": 23.81237,
+    "modules": 2,
+    "score": 0.95096,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -10.15994,
+    "lat": 8.54038,
+    "beds_demand": 37.81352,
+    "modules": 4,
+    "score": 0.90956,
+    "shift_km": 2.1,
+    "moved": true
+   },
+   {
+    "lon": -9.46943,
+    "lat": 8.52229,
+    "beds_demand": 65.31611,
+    "modules": 6,
+    "score": 0.71305,
+    "shift_km": 0.0,
+    "moved": false
+   },
+   {
+    "lon": -9.44671,
+    "lat": 8.48612,
+    "beds_demand": 120.0,
+    "modules": 10,
+    "score": 0.69518,
+    "shift_km": 4.7,
+    "moved": true
+   }
+  ],
+  "sites_moved": 2
+ }
+]

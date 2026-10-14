@@ -1,0 +1,85 @@
+site_id,space,zone,area_m2,note
+S1,triage,amber,116.4,screening at the single patient entrance
+S1,ward_suspect,red,540.0,9 m² per bed incl. aisle
+S1,ward_probable,red,324.0,
+S1,ward_confirmed,red,1080.0,
+S1,donning,green,45.0,one dressing room per ward
+S1,doffing_decon,amber,60.0,"undressing + chlorine showers, one per ward"
+S1,patient_discharge,amber,12.0,shower and clean clothes for recovered patients
+S1,morgue,red,72.0,≈ 1 place per 10 confirmed beds × 6 m²
+S1,lab,green,40.0,"PCR lab, sample reception from the red side"
+S1,pharmacy,green,84.8,
+S1,stores,green,138.0,"PPE, consumables"
+S1,laundry,amber,106.4,
+S1,staff_rest,green,334.5,computed: 1.5 m² per person on shift
+S1,staff_dormitory,service,1206.0,computed: 6 m² per resident staff
+S1,admin_data,green,41.6,
+S1,family_visiting,amber,30.0,talk across the double fence
+S1,water_treatment,service,40.0,bladder tanks + chlorination (2015 water filtering cycle)
+S1,generator,service,25.0,
+S1,incinerator_waste,red,46.6,"downwind, inside the red perimeter"
+S1,loading_zone,service,150.0,truck turning and unloading
+S1,burial_area,service,1944.0,computed: 3 m² per expected death over 90 days
+S2,triage,amber,73.2,screening at the single patient entrance
+S2,ward_suspect,red,216.0,9 m² per bed incl. aisle
+S2,ward_probable,red,216.0,
+S2,ward_confirmed,red,540.0,
+S2,donning,green,45.0,one dressing room per ward
+S2,doffing_decon,amber,60.0,"undressing + chlorine showers, one per ward"
+S2,patient_discharge,amber,12.0,shower and clean clothes for recovered patients
+S2,morgue,red,36.0,≈ 1 place per 10 confirmed beds × 6 m²
+S2,lab,green,40.0,"PCR lab, sample reception from the red side"
+S2,pharmacy,green,52.4,
+S2,stores,green,84.0,"PPE, consumables"
+S2,laundry,amber,63.2,
+S2,staff_rest,green,174.0,computed: 1.5 m² per person on shift
+S2,staff_dormitory,service,624.0,computed: 6 m² per resident staff
+S2,admin_data,green,30.8,
+S2,family_visiting,amber,30.0,talk across the double fence
+S2,water_treatment,service,40.0,bladder tanks + chlorination (2015 water filtering cycle)
+S2,generator,service,25.0,
+S2,incinerator_waste,red,35.8,"downwind, inside the red perimeter"
+S2,loading_zone,service,150.0,truck turning and unloading
+S2,burial_area,service,788.4,computed: 3 m² per expected death over 90 days
+S3,triage,amber,63.6,screening at the single patient entrance
+S3,ward_suspect,red,216.0,9 m² per bed incl. aisle
+S3,ward_probable,red,108.0,
+S3,ward_confirmed,red,432.0,
+S3,donning,green,45.0,one dressing room per ward
+S3,doffing_decon,amber,60.0,"undressing + chlorine showers, one per ward"
+S3,patient_discharge,amber,12.0,shower and clean clothes for recovered patients
+S3,morgue,red,30.0,≈ 1 place per 10 confirmed beds × 6 m²
+S3,lab,green,40.0,"PCR lab, sample reception from the red side"
+S3,pharmacy,green,45.2,
+S3,stores,green,72.0,"PPE, consumables"
+S3,laundry,amber,53.6,
+S3,staff_rest,green,138.0,computed: 1.5 m² per person on shift
+S3,staff_dormitory,service,498.0,computed: 6 m² per resident staff
+S3,admin_data,green,28.4,
+S3,family_visiting,amber,30.0,talk across the double fence
+S3,water_treatment,service,40.0,bladder tanks + chlorination (2015 water filtering cycle)
+S3,generator,service,25.0,
+S3,incinerator_waste,red,33.4,"downwind, inside the red perimeter"
+S3,loading_zone,service,150.0,truck turning and unloading
+S3,burial_area,service,640.1,computed: 3 m² per expected death over 90 days
+S4,triage,amber,63.6,screening at the single patient entrance
+S4,ward_suspect,red,216.0,9 m² per bed incl. aisle
+S4,ward_probable,red,108.0,
+S4,ward_confirmed,red,432.0,
+S4,donning,green,45.0,one dressing room per ward
+S4,doffing_decon,amber,60.0,"undressing + chlorine showers, one per ward"
+S4,patient_discharge,amber,12.0,shower and clean clothes for recovered patients
+S4,morgue,red,30.0,≈ 1 place per 10 confirmed beds × 6 m²
+S4,lab,green,40.0,"PCR lab, sample reception from the red side"
+S4,pharmacy,green,45.2,
+S4,stores,green,72.0,"PPE, consumables"
+S4,laundry,amber,53.6,
+S4,staff_rest,green,138.0,computed: 1.5 m² per person on shift
+S4,staff_dormitory,service,498.0,computed: 6 m² per resident staff
+S4,admin_data,green,28.4,
+S4,family_visiting,amber,30.0,talk across the double fence
+S4,water_treatment,service,40.0,bladder tanks + chlorination (2015 water filtering cycle)
+S4,generator,service,25.0,
+S4,incinerator_waste,red,33.4,"downwind, inside the red perimeter"
+S4,loading_zone,service,150.0,truck turning and unloading
+S4,burial_area,service,600.1,computed: 3 m² per expected death over 90 days

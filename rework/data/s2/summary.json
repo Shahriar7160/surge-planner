@@ -1,0 +1,133 @@
+{
+  "patches": 90,
+  "population": 908417.0,
+  "calibration": {
+    "R0": 1.5594272893458143,
+    "control_strength": 0.49299746688032997,
+    "control_midpoint_day_gueckedou": 154.5396240536118,
+    "mobility_share": 0.005001721253056229,
+    "reporting_rate": 0.39999905160369537,
+    "control_midpoint_day_macenta": 319.9495725101426,
+    "control_midpoint_day_other": 91.42742804421326,
+    "introduction_day_macenta": 246.52659961557987,
+    "control_midpoint_date_gueckedou": "2014-05-04",
+    "control_midpoint_date_macenta": "2014-10-16",
+    "control_midpoint_date_other": "2014-03-02",
+    "introduction_date_macenta": "2014-08-04",
+    "rmse_log": 0.09624953513144167,
+    "seed_patch": "Gu\u00e9ck\u00e9dou",
+    "seed_idx": 3,
+    "theta": [
+      1.5594272893458143,
+      0.49299746688032997,
+      154.5396240536118,
+      0.005001721253056229,
+      0.39999905160369537,
+      319.9495725101426,
+      91.42742804421326,
+      246.52659961557987
+    ],
+    "day0": "2013-12-01",
+    "key": {
+      "START_DATE": "2013-12-01",
+      "INCUBATION_D": 9.4,
+      "INFECTIOUS_D": 7.4,
+      "MOBILITY_DECAY_H": 2.0,
+      "REPORTING_RATE": 0.4,
+      "MIN_MOBILITY_SHARE": 0.005
+    }
+  },
+  "peak_beds_region": 251.74115268687189,
+  "filter_funnel": [
+    [
+      "candidates (500 m grid, Guinea)",
+      68885
+    ],
+    [
+      "slope",
+      20473
+    ],
+    [
+      "land cover (water, wetland, forest)",
+      8958
+    ],
+    [
+      "flood (near river)",
+      8217
+    ],
+    [
+      "isolation from settlements",
+      7694
+    ],
+    [
+      "truck access",
+      4135
+    ],
+    [
+      "water supply",
+      1694
+    ],
+    [
+      "lab reach",
+      1031
+    ],
+    [
+      "buildable area",
+      936
+    ]
+  ],
+  "sites": 4,
+  "sites_rule": "smallest K with \u226595% coverage",
+  "coverage": 0.9748367533479316,
+  "status": "Optimization terminated successfully",
+  "modules_total": 24,
+  "beds_total": 288,
+  "grid_units": 33,
+  "grid_coverage": 0.9970056172884909,
+  "facility_sensitivity": {
+    "coverage_repaired": 0.9748367533479316,
+    "coverage_moh_only": 0.9773969719731087,
+    "candidates_repaired": 936,
+    "candidates_moh_only": 542,
+    "site_shift_km": [
+      0.0,
+      27.6,
+      0.0,
+      0.0
+    ],
+    "sites_within_2km": 3
+  },
+  "cases_averted_by_horizon": 1571.5849065030304,
+  "deploy_date": "2014-08-15",
+  "params": {
+    "MUST": {
+      "max_patient_travel_h": 1.5,
+      "max_slope_pct": 5.0,
+      "exclude_landcover": [
+        80,
+        90,
+        95
+      ],
+      "exclude_tree_cover": true,
+      "min_river_distance_m": 200,
+      "min_settlement_distance_m": 500,
+      "max_road_distance_m": 1000,
+      "max_water_distance_m": 2000,
+      "max_lab_travel_h": 2.0,
+      "min_buildable_cells": 4
+    },
+    "SHOULD": {
+      "cell_coverage": 0.1,
+      "near_hospital": 0.2,
+      "helipad_space": 0.1,
+      "rainy_access": 0.15,
+      "border_flow": 0.1,
+      "waste_downhill": 0.1,
+      "burial_space": 0.05,
+      "community_acceptance": 0.1,
+      "fuel_supply": 0.1
+    },
+    "MAX_SITES": 8,
+    "BEDS_PER_MODULE": 12
+  }
+}

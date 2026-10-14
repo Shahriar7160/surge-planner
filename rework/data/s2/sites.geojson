@@ -1,0 +1,129 @@
+{
+"type": "FeatureCollection",
+"features": [
+{
+"type": "Feature",
+"properties": {
+"site_id": "S1",
+"near": "Fokodoumandou",
+"near_km": 0.9,
+"beds_demand": 120.0,
+"modules": 10,
+"beds": 120,
+"patches_served": 11,
+"people_served": 126587.34127553672,
+"t_hospital_h": 0.16856577148105045,
+"score": 0.818459196201704,
+"s_cell_coverage": 0.8684801811050982,
+"s_near_hospital": 1.0,
+"s_helipad_space": 0.48979591836734704,
+"s_rainy_access": 0.7600526315481568,
+"s_border_flow": 0.4495079672219885,
+"s_waste_downhill": 0.9125,
+"s_burial_space": 0.8571428571428577,
+"s_community_acceptance": 1.0,
+"s_fuel_supply": 0.8956575194289415
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-9.469428,
+8.522294
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"site_id": "S2",
+"near": "Kagbadou",
+"near_km": 1.8,
+"beds_demand": 61.62589437162748,
+"modules": 6,
+"beds": 72,
+"patches_served": 13,
+"people_served": 272940.0000000002,
+"t_hospital_h": 0.26940826908552196,
+"score": 0.9352123076579185,
+"s_cell_coverage": 0.6758714313295456,
+"s_near_hospital": 0.9889095605225589,
+"s_helipad_space": 1.0,
+"s_rainy_access": 1.0,
+"s_border_flow": 0.9902887523264182,
+"s_waste_downhill": 1.0,
+"s_burial_space": 0.8979591836734695,
+"s_community_acceptance": 0.9387755102040816,
+"s_fuel_supply": 0.8203886698372873
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-10.146307,
+8.526816
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"site_id": "S3",
+"near": "Kouankan",
+"near_km": 3.6,
+"beds_demand": 39.51258062022468,
+"modules": 4,
+"beds": 48,
+"patches_served": 13,
+"people_served": 42972.65872446327,
+"t_hospital_h": 1.507191998981688,
+"score": 0.5342678968699597,
+"s_cell_coverage": 0.0,
+"s_near_hospital": 0.28160457201046396,
+"s_helipad_space": 0.5714285714285713,
+"s_rainy_access": 1.0,
+"s_border_flow": 0.0,
+"s_waste_downhill": 0.9375,
+"s_burial_space": 0.5510204081632647,
+"s_community_acceptance": 0.6122448979591832,
+"s_fuel_supply": 0.8827861512092814
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-9.110546,
+8.427331
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"site_id": "S4",
+"near": "N'Zébéla",
+"near_km": 3.7,
+"beds_demand": 37.04237887526551,
+"modules": 4,
+"beds": 48,
+"patches_served": 22,
+"people_served": 56467.0,
+"t_hospital_h": 1.5763388987889502,
+"score": 0.4290963483498707,
+"s_cell_coverage": 0.0,
+"s_near_hospital": 0.24209205783488563,
+"s_helipad_space": 0.3265306122448977,
+"s_rainy_access": 1.0,
+"s_border_flow": 0.0,
+"s_waste_downhill": 0.5,
+"s_burial_space": 0.4285714285714282,
+"s_community_acceptance": 0.5714285714285714,
+"s_fuel_supply": 0.6945344698697524
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+-9.106003,
+8.115312
+]
+}
+}
+]
+}
