@@ -1,6 +1,6 @@
 // Compare the JS engine with the Python results: node web/test/engine.test.mjs
 import { readFileSync } from "fs";
-import { makeBrief, makeLayout, checkLayout, KIT } from "../js/engine.js";
+import { makeBrief, makeLayout, checkLayout, KIT, people, communityProgramme, communityLayout } from "../js/engine.js";
 const root = new URL("../../data/", import.meta.url);
 const briefs = JSON.parse(readFileSync(new URL("s3/briefs.json", root))).sites;
 const layouts = JSON.parse(readFileSync(new URL("s4/layouts.json", root))).layouts;
@@ -32,5 +32,20 @@ for (const pb of briefs) {
 }
 // rows of 3 still pass (the bug the checker once caught)
 for (const n of [2, 3, 4, 8]) { const b = makeBrief(120); const L = makeLayout(b, { ...KIT, MAX_MODULES_PER_ROW: n }); const c = checkLayout(L, b, { ...KIT, MAX_MODULES_PER_ROW: n }); console.log("per_row", n, "overlaps", c.overlaps.length, "walk", c.max_staff_walk_m, "ok", c.ok); }
+// step 7: community programme and layout equal the Python result
+const comm = JSON.parse(readFileSync(new URL("s7/community.json", root))).sites;
+for (const c of comm) {
+  const pb = briefs.find((b) => b.site_id === c.site_id);
+  const prog = communityProgramme(people(c.people.cases));
+  eq(prog.map((p) => p.modules), c.programme.map((p) => p.modules), c.site_id + " community programme");
+  const L = communityLayout(pb, c.programme);
+  eq(L.rects.length, c.layout.rects.length, c.site_id + " community n rects");
+  for (const r of c.layout.rects) {
+    const j = L.rects.find((x) => x.name === r.name && x.x === r.x && x.y === r.y);
+    if (!j) { fail++; console.log("community missing", c.site_id, r.name, r.x, r.y); continue; }
+    eq([j.w, j.h, j.program, j.zone], [r.w, r.h, r.program, r.zone], c.site_id + " " + r.name);
+  }
+  console.log(c.site_id, "community:", prog.reduce((a, p) => a + p.modules, 0), "modules");
+}
 console.log(fail ? `${fail} mismatches` : "all equal to the Python pipeline");
 process.exit(fail ? 1 : 0);

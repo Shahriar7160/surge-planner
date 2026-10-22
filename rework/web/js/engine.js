@@ -235,3 +235,70 @@ export function briefsGhCsv(id, near, brief, site) {
     site.rotation_deg, site.mirrored ? 1 : 0, site.lon, site.lat];
   return head.join(",") + "\n" + row.join(",") + "\n";
 }
+
+// ---------------------------------------------------------------- step 7: after the outbreak (pipeline/s7_*.py)
+export const COMMUNITY = {
+  CASE_FATALITY: 0.6, CHILDREN_PER_DEATH: 1.5, CASES_PER_HOUSEHOLD: 1.5, HALL_MODULES: 2,
+  PROGRAMME: [  // name, group, people basis, people per module
+    ["clinic", "care", "survivors", 450], ["counselling", "care", "survivors+households", 450],
+    ["workshop", "work", "households", 120], ["hall", "gather", "site", 0], ["kitchen", "gather", "site", 0],
+    ["classroom", "learn", "children", 90],
+  ],
+  GROUP_ORDER: ["care", "work", "gather", "learn"],
+  CONVERT: {
+    triage: ["reception", "gather"], family_visiting: ["café", "gather"], patient_corridor: ["covered street", "street"],
+    patient_discharge: ["toilets", "service"], laundry: ["laundry", "service"], morgue: ["memorial garden", "garden"],
+    incinerator_waste: ["memorial garden", "garden"], admin_data: ["admin", "care"], lab: ["clinic lab", "care"],
+    pharmacy: ["pharmacy", "care"], stores: ["stores", "service"], staff_rest: ["library", "learn"],
+    water_treatment: ["water", "service"], generator: ["solar + generator", "service"], loading_zone: ["market square", "gather"],
+    staff_dormitory: ["teachers' housing", "service"], burial_area: ["cemetery and memorial park", "garden"],
+  },
+  ROW_HEAD: { donning: ["washroom", "service"], store: ["storage", "service"], doffing: ["washroom", "service"] },
+};
+
+/** People affected in a catchment from its cumulative cases (port of s7_community.people). */
+export function people(cases, C = COMMUNITY) {
+  const deaths = cases * C.CASE_FATALITY;
+  return { cases, survivors: cases - deaths, deaths, children: deaths * C.CHILDREN_PER_DEATH,
+    households: cases / C.CASES_PER_HOUSEHOLD };
+}
+
+/** Community programme: modules per space (port of s7_community.programme). */
+export function communityProgramme(p, C = COMMUNITY) {
+  return C.PROGRAMME.map(([space, group, basis, per]) => {
+    if (basis === "site") return { space, group, people: null, modules: space === "hall" ? C.HALL_MODULES : 1 };
+    const who = basis.split("+").reduce((a, b) => a + p[b], 0);
+    return { space, group, people: Math.round(who), per_module: per, modules: Math.max(1, Math.ceil(who / per - 1e-9)) };
+  });
+}
+
+/** The step 4 generator with programme groups as wards, then every part converted (port of s7 community_layout). */
+export function communityLayout(brief, prog, G = KIT, C = COMMUNITY) {
+  const groups = C.GROUP_ORDER.map((g) => ({ ward: g, modules: prog.filter((p) => p.group === g).reduce((a, p) => a + p.modules, 0) }))
+    .filter((g) => g.modules);
+  const L = makeLayout({ ...brief, wards: groups }, G);
+  const queue = Object.fromEntries(C.GROUP_ORDER.map((g) => [g, prog.filter((p) => p.group === g).flatMap((p) => Array(p.modules).fill(p.space))]));
+  let R = L.rects.map((r0) => {
+    const r = { ...r0 };
+    if (r.kind === "ward_module") {
+      const g = r.ward;
+      Object.assign(r, { program: queue[g].shift(), zone: g, kind: "community_module" });
+      r.name = `${r.program}_${r.name.split("_M")[1]}`;
+    } else if (C.ROW_HEAD[r.kind]) [r.program, r.zone] = C.ROW_HEAD[r.kind];
+    else if (C.CONVERT[r.name]) [r.program, r.zone] = C.CONVERT[r.name];
+    return r;
+  });
+  const halls = R.filter((r) => r.program === "hall");
+  if (halls.length === 2 && halls[0].y === halls[1].y) {
+    const [a, c] = [...halls].sort((p, q) => p.x - q.x);
+    Object.assign(a, { w: rd(a.w + c.w), name: "hall" });
+    R = R.filter((r) => r !== c);
+  }
+  const gard = R.filter((r) => r.program === "memorial garden");
+  if (gard.length === 2) {
+    const x0 = Math.min(...gard.map((r) => r.x)), x1 = Math.max(...gard.map((r) => r.x + r.w));
+    Object.assign(gard[0], { x: x0, w: rd(x1 - x0), name: "memorial_garden" });
+    R = R.filter((r) => r !== gard[1]);
+  }
+  return { ...L, rects: R, fences: { outer: L.fences.outer } };
+}

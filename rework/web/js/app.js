@@ -1,5 +1,5 @@
 // S.U.R.G.E. deployment planner: pick a candidate site → set confirmed patients → adjust the generated wards.
-import { makeBrief, makeLayout, checkLayout, KIT, toLonLat, briefsGhCsv } from "./engine.js";
+import { makeBrief, makeLayout, checkLayout, KIT, toLonLat, briefsGhCsv, people, communityProgramme, communityLayout } from "./engine.js";
 
 const $ = (id) => document.getElementById(id);
 const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -30,7 +30,9 @@ const SLIDERS = [
 const S = {
   site: null, limit: 90, rain: false, confirmed: 120, kit: { ...KIT }, rotation: 0, mirrored: false,
   showOutside: false, view: "plan", brief: null, layout: null, checks: null,
+  phase: "ward", comm: null,                // "ward" (2014) or "after" (the outbreak is over)
 };
+const GROUP_LABEL = { care: "care", work: "work", gather: "gather", learn: "learn", garden: "garden", street: "street", service: "service" };
 let D = {};                                 // data
 let map, layers = {};
 let three = null;
@@ -38,10 +40,10 @@ let three = null;
 // ---------------------------------------------------------------- data
 async function load() {
   const get = (p) => fetch(p).then((r) => { if (!r.ok) throw new Error(`${p}: ${r.status}`); return r; });
-  const [cand, patches, lay, travel] = await Promise.all(
-    ["candidates", "patches", "layers", "travel"].map((n) => get(`data/${n}.json`).then((r) => r.json())));
+  const [cand, patches, lay, travel, module] = await Promise.all(
+    ["candidates", "patches", "layers", "travel", "module"].map((n) => get(`data/${n}.json`).then((r) => r.json())));
   const bytes = (b64) => Uint8Array.from(atob(b64), (ch) => ch.charCodeAt(0));
-  D = { meta: cand.meta, C: cand.candidates, P: patches, L: lay, T: { dry: bytes(travel.dry), rain: bytes(travel.rain) } };
+  D = { meta: cand.meta, C: cand.candidates, P: patches, L: lay, M: module, T: { dry: bytes(travel.dry), rain: bytes(travel.rain) } };
   const scores = D.C.map((c) => c.score);
   D.smin = Math.min(...scores); D.smax = Math.max(...scores);
   const order = [...D.C].sort((a, b) => b.score - a.score);
@@ -56,6 +58,7 @@ function catchment(c) {
   return {
     served, people: served.reduce((a, p) => a + p.pop, 0),
     demand: served.reduce((a, p) => a + p.peak_beds, 0),
+    cases: served.reduce((a, p) => a + p.cases_total, 0),
   };
 }
 function defaultConfirmed(c) {
@@ -163,12 +166,14 @@ function drawCatchment() {
   layers.sel.addLayer(L.circleMarker([c.lat, c.lon], { radius: 13, color: accent, weight: 3, fill: false, interactive: false }));
 }
 
+const shown = () => (S.phase === "after" && S.comm ? S.comm.layout : S.layout);
+
 function footprintFeatures() {
-  const L_ = S.layout, [fx, fy, fw, fh] = L_.fences.outer, cx = fx + fw / 2, cy = fy + fh / 2;
+  const L_ = shown(), [fx, fy, fw, fh] = L_.fences.outer, cx = fx + fw / 2, cy = fy + fh / 2;
   const ring = (x, y, w, h) => [[x, y], [x + w, y], [x + w, y + h], [x, y + h], [x, y]]
     .map(([a, b]) => toLonLat(a, b, S.site, S.rotation, S.mirrored, cx, cy));
   const parts = L_.rects.filter((r) => S.showOutside || !["staff_dormitory", "burial_area"].includes(r.name));
-  const feats = parts.map((r) => ({ type: "Feature", properties: { name: r.name, zone: r.zone, kind: r.kind, ward: r.ward || null },
+  const feats = parts.map((r) => ({ type: "Feature", properties: { name: r.name, zone: r.zone, kind: r.kind, ward: r.ward || null, program: r.program || null },
     geometry: { type: "Polygon", coordinates: [ring(r.x, r.y, r.w, r.h)] } }));
   feats.push({ type: "Feature", properties: { name: "outer_fence", zone: "fence", kind: "fence" },
     geometry: { type: "Polygon", coordinates: [ring(fx, fy, fw, fh)] } });
@@ -176,6 +181,7 @@ function footprintFeatures() {
 }
 function zoneColor(r) {
   if (r.kind === "ward_module") return css(`--${r.ward}`);
+  if (r.program || r.kind === "community_module") return css(`--g-${r.zone}`);
   return css(`--${r.zone === "service" ? "service" : r.zone}`);
 }
 function drawFootprint() {
@@ -220,7 +226,36 @@ function siteCard() {
     one site's capacity (${SITE_CAP} beds = 10 modules).`;
 }
 
+function moduleCard() {
+  const m = D.M, mt = m.metrics, hrs = m.deployment.reduce((a, s) => a + s.crew_min, 0) / 60;
+  return `<div class="modcard"><h3>Ward module · ${m.label}</h3>
+    <figure class="fold"><img src="data/fold.gif" alt="The ward skin folding from one flat sheet into the vault and back" loading="lazy">
+      <figcaption>Folding study: edge lengths fixed, hinge angles driven, feet anchored. One flat sheet → vault → flat pack.</figcaption></figure>
+    <p class="note">Chosen from 58 fold variants (step 6): aluminium frame that folds flat, ${D.M.faces.length} washable triangular
+    panels of ${mt.unique_panels} shapes (${mt.panels} sheet pieces) that fold from one flat sheet (angle error ${mt.flat_fold_err_deg}°),
+    roof facets ≥ ${Math.round(mt.min_slope_deg)}° because the wettest month of 2014 had
+    ${m.rule.wettest_month_mm} mm of rain. About ${fmt(hrs, 0)} crew-hours to deploy.</p></div>`;
+}
+
+function communityPanel() {
+  const k = S.comm, p = k.people;
+  const rows = k.prog.map((x) => `<tr><td><i class="sw" style="background:var(--g-${x.group})"></i>${x.space}</td>
+    <td>${x.people == null ? "1 per site" : fmt(x.people)}</td><td><b>${x.modules}</b></td></tr>`).join("");
+  $("brief").innerHTML = `
+    <p class="note">${S.site.surge ? "This site's share of" : "Settlements within reach:"} <b>${fmt(p.cases)}</b> cases since Dec 2013 →
+      ${fmt(p.survivors)} survivors, ${fmt(p.children)} children who lost a parent or caregiver, ${fmt(p.households)} affected households.</p>
+    <table class="prog"><thead><tr><th>Space</th><th>People</th><th>Modules</th></tr></thead><tbody>${rows}</tbody></table>
+    <dl class="kv">
+      <div><dt>Modules needed</dt><dd>${k.need}</dd></div>
+      <div><dt>Reused from the ward</dt><dd>${Math.min(k.need, k.have)}</dd></div>
+      <div><dt>${k.need > k.have ? "New from stock" : "Back to stock"}</dt><dd>${Math.abs(k.need - k.have)}</dd></div>
+      <div><dt>Red fence</dt><dd>removed</dd></div>
+    </dl>
+    <p class="note">Same frames, new skin: timber louvres below 1.2 m for cross-ventilation, translucent diamonds above.</p>`;
+}
+
 function briefPanel() {
+  if (S.phase === "after") return communityPanel();
   const b = S.brief, c = S.site, ck = S.checks;
   const w = Object.fromEntries(b.wards.map((x) => [x.ward, x]));
   const fits = b.area.plot_m2 <= c.buildable_m2;
@@ -239,7 +274,8 @@ function briefPanel() {
       <div><dt>Land within 300 m</dt><dd>${fmt(c.buildable_m2 / 10000, 1)} ha</dd></div>
     </dl>
     ${fits ? "" : `<p class="warn">The plot does not fit the buildable land around this site. Choose a site with more land or split the demand.</p>`}
-    ${S.confirmed > SITE_CAP ? `<p class="warn">${fmt(S.confirmed)} confirmed patients is more than one site's capacity (${SITE_CAP}). The layout is still generated; in the plan, a second site would share the load.</p>` : ""}`;
+    ${S.confirmed > SITE_CAP ? `<p class="warn">${fmt(S.confirmed)} confirmed patients is more than one site's capacity (${SITE_CAP}). The layout is still generated; in the plan, a second site would share the load.</p>` : ""}
+    ${moduleCard()}`;
 }
 
 function buildSliders() {
@@ -261,6 +297,17 @@ function syncPlacementInputs() {
 }
 
 function checksPanel() {
+  if (S.phase === "after") {
+    const k = S.comm, [, , fw, fh] = k.layout.fences.outer;
+    const ov = k.layout.rects.filter((a, i, R) => R.slice(i + 1).some((b) => Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x) > .01
+      && Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y) > .01)).length;
+    $("checks").innerHTML = [[true, "Modules", `${k.need} (${Math.min(k.need, k.have)} reused)`], [!ov, "Overlaps", ov],
+      [true, "Fenced", `${Math.round(fw)} × ${Math.round(fh)} m`], [true, "Red fence", "removed"]]
+      .map(([ok, l, v]) => `<li class="${ok ? "ok" : "bad"}">${l} <b>${v}</b></li>`).join("");
+    $("design-title").textContent = `${S.site.surge ?? "Candidate"} · ${S.site.near} · after the outbreak`;
+    $("design-sub").textContent = `Community centre: the same kit and rules, a new brief sized by survivors and bereaved families`;
+    return;
+  }
   const k = S.checks, b = S.brief, c = S.site;
   const items = [
     [k.beds_match, "Beds", `${k.beds_in_layout} / ${k.beds_in_brief}`],
@@ -279,7 +326,7 @@ function checksPanel() {
 
 // ---------------------------------------------------------------- plan (SVG)
 function planSVG() {
-  const L_ = S.layout;
+  const L_ = shown(), after = S.phase === "after";
   const parts = L_.rects.filter((r) => S.showOutside || !["staff_dormitory", "burial_area"].includes(r.name));
   const [fx, fy, fw, fh] = L_.fences.outer;
   let x0 = Math.min(fx, ...parts.map((r) => r.x)), y0 = Math.min(fy, ...parts.map((r) => r.y));
@@ -287,10 +334,11 @@ function planSVG() {
   const pad = 10; x0 -= pad; y0 -= pad + 4; x1 += pad; y1 += pad + 6;
   const Y = (y) => y1 - y + y0;                       // flip: road at the bottom
   const fs = Math.max(2, Math.min(3.4, (x1 - x0) / 38));
-  const fill = (r) => r.kind === "ward_module" ? `var(--${r.ward})` : r.kind === "corridor" ? "var(--accent-soft)"
-    : `var(--${r.zone})`;
+  const fill = (r) => r.kind === "ward_module" ? `var(--${r.ward})` : r.program ? `var(--g-${r.zone})`
+    : r.kind === "corridor" ? "var(--accent-soft)" : `var(--${r.zone})`;
   const rects = parts.map((r) => {
-    const label = r.kind === "ward_module" ? r.name.split("_M")[0][0].toUpperCase() + r.name.split("_M")[1]
+    const label = r.program ? (["washroom", "storage", "covered street"].includes(r.program) ? "" : r.program)
+      : r.kind === "ward_module" ? r.name.split("_M")[0][0].toUpperCase() + r.name.split("_M")[1]
       : r.kind === "donning" ? "don" : r.kind === "doffing" ? "doff" : r.kind === "store" ? "PPE" : ROOM_LABEL[r.name] ?? r.name;
     const tall = r.h > r.w * 1.5 && r.w < 10;
     const cx = r.x + r.w / 2, cy = Y(r.y + r.h / 2);
@@ -299,11 +347,11 @@ function planSVG() {
     size = Math.min(size, room / (0.58 * Math.max(1, label.length)), (tall ? r.w : r.h) * 0.6);
     const op = r.kind === "ward_module" || r.kind === "corridor" ? 1 : 0.82;
     const txt = label && size >= 1.1 ? `<text x="${cx}" y="${cy}" font-size="${size}" text-anchor="middle" dominant-baseline="central"
-      ${tall ? `transform="rotate(-90 ${cx} ${cy})"` : ""} ${r.ward === "confirmed" ? 'style="fill:#fff"' : ""}>${label}</text>` : "";
+      ${tall ? `transform="rotate(-90 ${cx} ${cy})"` : ""} ${r.ward === "confirmed" || (r.program && ["care", "learn", "gather"].includes(r.zone)) ? 'style="fill:#fff"' : ""}>${label}</text>` : "";
     return `<g><title>${r.name.replace(/_/g, " ")} · ${fmt(r.w, 1)} × ${fmt(r.h, 1)} m</title>
       <rect x="${r.x}" y="${Y(r.y + r.h)}" width="${r.w}" height="${r.h}" style="fill:${fill(r)};fill-opacity:${op};stroke:var(--ink);stroke-width:.15"/>${txt}</g>`;
   }).join("");
-  const [rx, ry, rw, rh] = L_.fences.red_inner;
+  const red = L_.fences.red_inner;
   const flow = L_.patient_flow.map(([x, y]) => `${x},${Y(y)}`).join(" ");
   const sb = 10, sbx = x0 + 3, sby = Y(y0) - 3;
   return `<svg viewBox="${x0} ${Y(y1)} ${x1 - x0} ${y1 - y0}" role="img" aria-label="Generated ward layout plan">
@@ -311,10 +359,10 @@ function planSVG() {
       <path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker></defs>
     <rect x="${fx}" y="${Y(fy + fh)}" width="${fw}" height="${fh}" style="fill:none;stroke:var(--ink);stroke-width:.35;stroke-dasharray:1.6 1"/>
     ${rects}
-    <rect x="${rx}" y="${Y(ry + rh)}" width="${rw}" height="${rh}" style="fill:none;stroke:var(--red);stroke-width:.3;stroke-dasharray:.6 .6"/>
-    <polyline points="${flow}" style="fill:none;stroke:var(--accent);stroke-width:.7" marker-end="url(#arr)"/>
-    <text x="${fx}" y="${Y(fy + fh) - 2}" font-size="${fs}" style="fill:var(--muted)">outer fence ${fmt(fw)} × ${fmt(fh)} m · patient route in blue · red fence dotted</text>
-    <text x="${(x0 + x1) / 2}" y="${Y(y0) - 2}" font-size="${fs}" text-anchor="middle" style="fill:var(--muted)">road side ↓ · patients enter at triage</text>
+    ${red ? `<rect x="${red[0]}" y="${Y(red[1] + red[3])}" width="${red[2]}" height="${red[3]}" style="fill:none;stroke:var(--red);stroke-width:.3;stroke-dasharray:.6 .6"/>` : ""}
+    <polyline points="${flow}" style="fill:none;stroke:${after ? "var(--muted)" : "var(--accent)"};stroke-width:.7" ${after ? "" : 'marker-end="url(#arr)"'}/>
+    <text x="${fx}" y="${Y(fy + fh) - 2}" font-size="${fs}" style="fill:var(--muted)">outer fence ${fmt(fw)} × ${fmt(fh)} m · ${after ? "the red fence is gone; the patient route is a covered street" : "patient route in blue · red fence dotted"}</text>
+    <text x="${(x0 + x1) / 2}" y="${Y(y0) - 2}" font-size="${fs}" text-anchor="middle" style="fill:var(--muted)">road side ↓ · ${after ? "everyone enters at the old triage, now the reception" : "patients enter at triage"}</text>
     <line x1="${sbx}" y1="${sby}" x2="${sbx + sb}" y2="${sby}" style="stroke:var(--ink);stroke-width:.5"/>
     <text x="${sbx + sb / 2}" y="${sby - 1}" font-size="${fs * 0.8}" text-anchor="middle">10 m</text>
   </svg>`;
@@ -343,26 +391,50 @@ function init3D() {
   const loop = () => { if (S.view === "3d") { controls.update(); renderer.render(scene, camera); } requestAnimationFrame(loop); };
   loop();
 }
+let MODULE_GEO = null;
+function moduleGeometry() {
+  if (MODULE_GEO) return MODULE_GEO;
+  const V = D.M.vertices, pos = [];
+  for (const f of D.M.faces) for (let i = 1; i < f.length - 1; i++)
+    for (const k of [f[0], f[i], f[i + 1]]) pos.push(V[k][0], V[k][2], -V[k][1]);   // plan (x, y, z) → three (x, z, −y)
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+  g.computeVertexNormals();
+  MODULE_GEO = { mesh: g, edges: new THREE.EdgesGeometry(g, 1) };
+  return MODULE_GEO;
+}
+
 function build3D() {
   if (!three) init3D();
   const { group, scene, camera, controls } = three;
-  group.children.forEach((o) => { o.geometry?.dispose(); o.material?.dispose(); });
+  group.children.forEach((o) => { if (MODULE_GEO && (o.geometry === MODULE_GEO.mesh || o.geometry === MODULE_GEO.edges)) return; o.geometry?.dispose(); o.material?.dispose(); });
   group.clear();
   scene.background = new THREE.Color(css("--bg"));
   const K = S.kit, mat = (c, o = 1) => new THREE.MeshLambertMaterial({ color: new THREE.Color(c), transparent: o < 1, opacity: o });
-  const parts = S.layout.rects.filter((r) => S.showOutside || !["staff_dormitory", "burial_area"].includes(r.name));
+  const LY = shown(), after = S.phase === "after";
+  const parts = LY.rects.filter((r) => S.showOutside || !["staff_dormitory", "burial_area"].includes(r.name));
+  const G = moduleGeometry(), lineMat = new THREE.LineBasicMaterial({ color: new THREE.Color(css("--ink")), transparent: true, opacity: 0.22 });
   for (const r of parts) {
     let mesh;
-    if (r.kind === "ward_module") {
-      const s = new THREE.Shape();
-      s.moveTo(0, 0); s.lineTo(0, K.MODULE_H); s.lineTo(r.w / 2, K.MODULE_RIDGE); s.lineTo(r.w, K.MODULE_H); s.lineTo(r.w, 0); s.lineTo(0, 0);
-      const g = new THREE.ExtrudeGeometry(s, { depth: r.h, bevelEnabled: false });
-      mesh = new THREE.Mesh(g, mat(css(`--${r.ward}`)));
-      mesh.position.set(r.x, 0, -(r.y + r.h));
+    if (r.kind === "ward_module" || r.kind === "community_module") {
+      // the origami module (step 6), tiled along a merged room such as the hall
+      const col = r.kind === "ward_module" ? css(`--${r.ward}`) : css(`--g-${r.zone}`);
+      const m = mat(col);
+      m.side = THREE.DoubleSide;
+      for (let t = 0; t < Math.max(1, Math.round(r.w / D.M.span)); t++) {
+        const o = new THREE.Mesh(G.mesh, m);
+        o.position.set(r.x + t * D.M.span, 0, -r.y);
+        o.scale.set(Math.min(r.w, D.M.span) / D.M.span, 1, r.h / D.M.length);
+        group.add(o);
+        const e = new THREE.LineSegments(G.edges, lineMat);
+        e.position.copy(o.position); e.scale.copy(o.scale); group.add(e);
+      }
+      continue;
     } else {
       const h = r.kind === "corridor" ? 0.2 : ["staff_dormitory", "burial_area", "loading_zone"].includes(r.name) ? 0.1 : K.SERVICE_H;
       const g = new THREE.BoxGeometry(r.w, h, r.h);
-      mesh = new THREE.Mesh(g, mat(r.kind === "corridor" ? css("--accent") : css(`--${r.zone}`), r.kind === "corridor" ? 0.6 : 1));
+      const zc = r.program ? css(`--g-${r.zone}`) : css(`--${r.zone}`);
+      mesh = new THREE.Mesh(g, mat(r.kind === "corridor" ? (after ? css("--g-street") : css("--accent")) : zc, r.kind === "corridor" && !after ? 0.6 : 1));
       mesh.position.set(r.x + r.w / 2, h / 2, -(r.y + r.h / 2));
     }
     group.add(mesh);
@@ -372,10 +444,10 @@ function build3D() {
   const loop = (x, y, w, h, color, z = 0.05) => new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(
     [[x, y], [x + w, y], [x + w, y + h], [x, y + h]].map(([a, b]) => new THREE.Vector3(a, z, -b))),
     new THREE.LineBasicMaterial({ color: new THREE.Color(color) }));
-  const [fx, fy, fw, fh] = S.layout.fences.outer;
+  const [fx, fy, fw, fh] = LY.fences.outer;
   group.add(loop(fx, fy, fw, fh, css("--ink")));
-  group.add(loop(...S.layout.fences.red_inner, css("--red")));
-  group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(S.layout.patient_flow.map(([x, y]) => new THREE.Vector3(x, 0.4, -y))),
+  if (LY.fences.red_inner) group.add(loop(...LY.fences.red_inner, css("--red")));
+  if (!after) group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(LY.patient_flow.map(([x, y]) => new THREE.Vector3(x, 0.4, -y))),
     new THREE.LineBasicMaterial({ color: new THREE.Color(css("--accent")) })));
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(fw + 80, fh + 80), mat(css("--land")));
   ground.rotation.x = -Math.PI / 2; ground.position.set(fx + fw / 2, -0.02, -(fy + fh / 2)); group.add(ground);
@@ -393,6 +465,10 @@ function update({ catchmentOnly = false } = {}) {
   S.brief = makeBrief(S.confirmed);
   S.layout = makeLayout(S.brief, S.kit);
   S.checks = checkLayout(S.layout, S.brief, S.kit);
+  const cases = S.site.surge ? D.briefBySite[S.site.surge].cases : catchment(S.site).cases;
+  const p = people(cases), prog = communityProgramme(p);
+  S.comm = { people: p, prog, need: prog.reduce((a, x) => a + x.modules, 0), have: S.brief.modules_total,
+    layout: communityLayout(S.brief, prog, S.kit) };
   briefPanel();
   checksPanel();
   $("plan").innerHTML = planSVG();
@@ -468,10 +544,19 @@ function wire() {
     if (v === "3d") build3D();
   };
   $("tab-plan").onclick = () => tab("plan"); $("tab-3d").onclick = () => tab("3d");
+  const phase = (v) => {
+    S.phase = v;
+    $("phase-ward").classList.toggle("on", v === "ward"); $("phase-after").classList.toggle("on", v === "after");
+    $("phase-ward").setAttribute("aria-pressed", v === "ward"); $("phase-after").setAttribute("aria-pressed", v === "after");
+    document.body.classList.toggle("after", v === "after");
+    if (three) three.framed = false;
+    update();
+  };
+  $("phase-ward").onclick = () => phase("ward"); $("phase-after").onclick = () => phase("after");
   $("copy-csv").onclick = () => copy(briefsGhCsv(S.site.surge ?? `C${S.site.id}`, S.site.near, S.brief,
     { ...S.site, rotation_deg: S.rotation, mirrored: S.mirrored }), "CSV row");
   $("copy-json").onclick = () => copy(JSON.stringify({ site: S.site, inputs: { confirmed: S.confirmed, kit: S.kit, rotation: S.rotation, mirrored: S.mirrored },
-    brief: S.brief, layout: S.layout, checks: S.checks }, null, 1), "layout JSON");
+    brief: S.brief, layout: S.layout, checks: S.checks, after_the_outbreak: S.comm }, null, 1), "layout JSON");
   $("copy-geo").onclick = () => copy(JSON.stringify({ type: "FeatureCollection", features: footprintFeatures() }), "GeoJSON");
   const retheme = () => { restyleMap(); if (S.view === "3d") build3D(); };
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);

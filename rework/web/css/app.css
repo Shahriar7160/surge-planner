@@ -12,6 +12,7 @@
   --red: #c8433f; --amber: #dc9a1e; --green: #2b9469; --service: #8a8d86;
   --suspect: #f2b5ad; --probable: #e5877c; --confirmed: #ad2d2c;
   --ok: #1f7a52; --bad: #b3261e;
+  --g-care: #3d8f8a; --g-work: #c98a2e; --g-gather: #8a63a8; --g-learn: #3f6fb5; --g-garden: #7aa35a; --g-street: #e7dccb; --g-service: #9a9c95;
   --land: #e4e9e2; --land-line: #b9c4bc; --road: #a8b0aa; --road-main: #7d857f;
   --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
@@ -24,7 +25,7 @@
     --accent: #6fa3ec; --accent-soft: #1d2c42; --ramp-lo: #33415a;
     --red: #e0605b; --amber: #e8ad3c; --green: #43b585; --service: #858a84;
     --suspect: #f0aca3; --probable: #e47b70; --confirmed: #c9413e;
-    --ok: #4cc58d; --bad: #ff7a70;
+    --ok: #4cc58d; --bad: #ff7a70; --g-care: #4fa8a2; --g-work: #d79b3f; --g-gather: #9d78bb; --g-learn: #5b8bd0; --g-garden: #8cb86b; --g-street: #4a4237; --g-service: #858a84;
     --land: #18211e; --land-line: #33413b; --road: #3d4943; --road-main: #5f6d66;
     color-scheme: dark;
   }
@@ -34,7 +35,7 @@
   --accent: #6fa3ec; --accent-soft: #1d2c42; --ramp-lo: #33415a;
   --red: #e0605b; --amber: #e8ad3c; --green: #43b585; --service: #858a84;
   --suspect: #f0aca3; --probable: #e47b70; --confirmed: #c9413e;
-  --ok: #4cc58d; --bad: #ff7a70;
+  --ok: #4cc58d; --bad: #ff7a70; --g-care: #4fa8a2; --g-work: #d79b3f; --g-gather: #9d78bb; --g-learn: #5b8bd0; --g-garden: #8cb86b; --g-street: #4a4237; --g-service: #858a84;
   --land: #18211e; --land-line: #33413b; --road: #3d4943; --road-main: #5f6d66;
   color-scheme: dark;
 }
@@ -154,6 +155,17 @@ input[type="range"] { accent-color: var(--accent); }
 .warn { margin: 0; font-size: .8rem; color: var(--bad); }
 
 /* ---- design view */
+.design-head .seg + .seg { margin-left: 6px; }
+.modcard { border-top: 1px solid var(--line); padding-top: 8px; display: grid; gap: 4px; }
+.modcard h3 { color: var(--ink); margin: 0; }
+.modcard .fold { margin: 0; background: #fff; border: 1px solid var(--line); }
+.modcard .fold img { display: block; width: 100%; height: auto; }
+.modcard .fold figcaption { font-size: 11px; color: #555; padding: 4px 6px 6px; }
+.prog { width: 100%; border-collapse: collapse; font-size: .8rem; }
+.prog th { text-align: left; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--line); padding: 3px 0; }
+.prog td { padding: 3px 0; border-bottom: 1px dotted var(--line); font-variant-numeric: tabular-nums; }
+.prog td:nth-child(n+2), .prog th:nth-child(n+2) { text-align: right; }
+.sw { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: 0; }
 .design-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
 .view { position: relative; flex: 1; min-height: 340px; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg); overflow: hidden; }
 .plan, .three { position: absolute; inset: 0; }

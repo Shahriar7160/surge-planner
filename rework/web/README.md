@@ -12,6 +12,10 @@ A static web page (no server) that runs the S.U.R.G.E. workflow in the browser:
    The brief follows the step 3 ratios: wards, modules, staff, water, power, plot size and whether it fits the land.
 3. **Adjust the wards.** Sliders change the kit and rules (modules per row, bay, gaps, corridor, low-risk column,
    fences, margins). The layout, its rule checks, the plan, the 3D model and the footprint on the map update live.
+   The ward modules are the origami module chosen in step 6 (Yoshimura diamond vault), shown in the 3D view.
+4. **See what it becomes.** *After the outbreak* switches the same site to a community centre (step 7): the outbreak
+   model's cases in the catchment give survivors, bereaved children and households; they size a clinic, counselling,
+   workshops, a hall, a kitchen and classrooms, and the same generator lays them out in the same modules.
    *Copy CSV for Grasshopper* gives one row in the `briefs_gh.csv` format, so the same site opens in
    `grasshopper/SURGE_wards.gh`.
 
@@ -19,9 +23,9 @@ A static web page (no server) that runs the S.U.R.G.E. workflow in the browser:
 - `js/engine.js` is a line-by-line port of `pipeline/s3_run.py` (brief) and `pipeline/s4_layout.py` (layout and
   checks). `test/engine.test.mjs` checks it against the committed Python results for all four sites
   (`node test/engine.test.mjs`).
-- `data/` is written by `python pipeline/s5_web_export.py`: candidates with their scores and map orientation,
+- `data/` is written by `python pipeline/s5_web_export.py` (after steps 6 and 7): candidates with their scores and map orientation,
   the settlement patches with their modelled peak demand, travel-time matrices in `travel.json` (candidate → settlement, minutes,
-  dry and rainy season) and the map layers.
+  dry and rainy season) and the map layers, and `module.json` (the origami module mesh from step 6).
 - Grasshopper cannot run in a browser. The Grasshopper definition and this page apply the same rules, so they can
   be compared rectangle by rectangle (`data/s4/gh/reference_S*.csv`).
 
