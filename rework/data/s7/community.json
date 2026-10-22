@@ -1,0 +1,2703 @@
+{
+ "meta": {
+  "ratios": "pipeline/s7_params.py (DRAFT)",
+  "cases_window": "Dec 2013 – Oct 2014 (model)"
+ },
+ "sites": [
+  {
+   "site_id": "S1",
+   "near": "Fokodoumandou",
+   "people": {
+    "cases": 982,
+    "survivors": 393,
+    "deaths": 589,
+    "children": 884,
+    "households": 655
+   },
+   "programme": [
+    {
+     "space": "clinic",
+     "group": "care",
+     "people": 393,
+     "per_module": 450,
+     "modules": 1,
+     "note": "post-Ebola follow-up: eyes, joints, hearing (3 rooms × 150)"
+    },
+    {
+     "space": "counselling",
+     "group": "care",
+     "people": 1048,
+     "per_module": 450,
+     "modules": 3,
+     "note": "psychosocial support, 3 rooms × 150 people"
+    },
+    {
+     "space": "workshop",
+     "group": "work",
+     "people": 655,
+     "per_module": 120,
+     "modules": 6,
+     "note": "skills and livelihoods for families that lost an earner"
+    },
+    {
+     "space": "hall",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 2,
+     "note": "assembly, memorial ceremonies; 2 modules joined, 1 per site"
+    },
+    {
+     "space": "kitchen",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 1,
+     "note": "community kitchen and market, 1 per site"
+    },
+    {
+     "space": "classroom",
+     "group": "learn",
+     "people": 884,
+     "per_module": 90,
+     "modules": 10,
+     "note": "catch-up classes: schools closed Aug 2014 – Jan 2015; 30 pupils × 3 shifts"
+    }
+   ],
+   "modules_needed": 23,
+   "modules_from_ward": 18,
+   "modules_extra": 5,
+   "modules_to_stock": 0,
+   "layout": {
+    "site_id": "S1",
+    "rects": [
+     {
+      "name": "triage",
+      "zone": "gather",
+      "x": 13.0,
+      "y": 0.0,
+      "w": 24.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "reception"
+     },
+     {
+      "name": "family_visiting",
+      "zone": "gather",
+      "x": 37.0,
+      "y": 0.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "café"
+     },
+     {
+      "name": "donning_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 15.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 21.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "clinic_1",
+      "zone": "care",
+      "x": 19.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "clinic"
+     },
+     {
+      "name": "counselling_2",
+      "zone": "care",
+      "x": 25.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "counselling_3",
+      "zone": "care",
+      "x": 31.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "counselling_4",
+      "zone": "care",
+      "x": 37.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "donning_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 36.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 42.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "workshop_1",
+      "zone": "work",
+      "x": 19.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_2",
+      "zone": "work",
+      "x": 25.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_3",
+      "zone": "work",
+      "x": 31.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_4",
+      "zone": "work",
+      "x": 37.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_5",
+      "zone": "work",
+      "x": 43.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "donning_work_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 57.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_work_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 63.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "workshop_6",
+      "zone": "work",
+      "x": 19.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "donning_gather_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 78.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_gather_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 84.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "hall",
+      "zone": "gather",
+      "x": 19.0,
+      "y": 72.0,
+      "w": 12.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "hall"
+     },
+     {
+      "name": "kitchen_3",
+      "zone": "gather",
+      "x": 31.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "kitchen"
+     },
+     {
+      "name": "donning_learn_5",
+      "zone": "service",
+      "x": 13.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_5",
+      "zone": "service",
+      "x": 13.0,
+      "y": 99.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_5",
+      "zone": "service",
+      "x": 13.0,
+      "y": 105.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_1",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_2",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_3",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_4",
+      "zone": "learn",
+      "x": 37.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_5",
+      "zone": "learn",
+      "x": 43.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "donning_learn_6",
+      "zone": "service",
+      "x": 13.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_6",
+      "zone": "service",
+      "x": 13.0,
+      "y": 120.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_6",
+      "zone": "service",
+      "x": 13.0,
+      "y": 126.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_6",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_7",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_8",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_9",
+      "zone": "learn",
+      "x": 37.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_10",
+      "zone": "learn",
+      "x": 43.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "patient_corridor",
+      "zone": "street",
+      "x": 49.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 126.0,
+      "kind": "corridor",
+      "program": "covered street"
+     },
+     {
+      "name": "patient_discharge",
+      "zone": "service",
+      "x": 13.0,
+      "y": 135.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "toilets"
+     },
+     {
+      "name": "laundry",
+      "zone": "service",
+      "x": 19.0,
+      "y": 135.0,
+      "w": 18.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "laundry"
+     },
+     {
+      "name": "memorial_garden",
+      "zone": "garden",
+      "x": 40.0,
+      "y": 135.0,
+      "w": 25.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "memorial garden"
+     },
+     {
+      "name": "admin_data",
+      "zone": "care",
+      "x": 0,
+      "y": 0.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "admin"
+     },
+     {
+      "name": "lab",
+      "zone": "care",
+      "x": 0,
+      "y": 6.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "clinic lab"
+     },
+     {
+      "name": "pharmacy",
+      "zone": "care",
+      "x": 0,
+      "y": 12.0,
+      "w": 12.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "pharmacy"
+     },
+     {
+      "name": "stores",
+      "zone": "service",
+      "x": 0,
+      "y": 24.0,
+      "w": 12.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "stores"
+     },
+     {
+      "name": "staff_rest",
+      "zone": "learn",
+      "x": 0,
+      "y": 36.0,
+      "w": 12.0,
+      "h": 30.0,
+      "kind": "space",
+      "program": "library"
+     },
+     {
+      "name": "water_treatment",
+      "zone": "service",
+      "x": 0.0,
+      "y": -12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "water"
+     },
+     {
+      "name": "generator",
+      "zone": "service",
+      "x": 18.0,
+      "y": -12.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "solar + generator"
+     },
+     {
+      "name": "loading_zone",
+      "zone": "gather",
+      "x": 30.0,
+      "y": -18.0,
+      "w": 18.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "market square"
+     },
+     {
+      "name": "staff_dormitory",
+      "zone": "service",
+      "x": 77.0,
+      "y": 0,
+      "w": 102.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "teachers' housing"
+     },
+     {
+      "name": "burial_area",
+      "zone": "garden",
+      "x": 77.0,
+      "y": 123.0,
+      "w": 108.0,
+      "h": 18.0,
+      "kind": "space",
+      "program": "cemetery and memorial park"
+     }
+    ],
+    "patient_flow": [
+     [
+      19.0,
+      3.0
+     ],
+     [
+      50.5,
+      3.0
+     ],
+     [
+      50.5,
+      18.0
+     ],
+     [
+      50.5,
+      39.0
+     ],
+     [
+      50.5,
+      60.0
+     ],
+     [
+      50.5,
+      81.0
+     ],
+     [
+      50.5,
+      102.0
+     ],
+     [
+      50.5,
+      123.0
+     ],
+     [
+      50.5,
+      138.0
+     ]
+    ],
+    "rows": [
+     {
+      "ward": "care",
+      "y": 9.0,
+      "modules": 4
+     },
+     {
+      "ward": "work",
+      "y": 30.0,
+      "modules": 5
+     },
+     {
+      "ward": "work",
+      "y": 51.0,
+      "modules": 1
+     },
+     {
+      "ward": "gather",
+      "y": 72.0,
+      "modules": 3
+     },
+     {
+      "ward": "learn",
+      "y": 93.0,
+      "modules": 5
+     },
+     {
+      "ward": "learn",
+      "y": 114.0,
+      "modules": 5
+     }
+    ],
+    "fences": {
+     "outer": [
+      -6.0,
+      -6.0,
+      77.0,
+      153.0
+     ]
+    },
+    "extent": [
+     0,
+     -18.0,
+     185.0,
+     141.0
+    ]
+   },
+   "overlaps": [],
+   "cladding": {
+    "ward": "sealed twin-wall PP panels, washable with 0.5% chlorine; negative-pressure end wall",
+    "community": "lower 1.2 m: timber louvre panels (cross-ventilation); upper: translucent PP diamonds; end walls: open doors to the covered street"
+   }
+  },
+  {
+   "site_id": "S2",
+   "near": "Kagbadou",
+   "people": {
+    "cases": 1250,
+    "survivors": 500,
+    "deaths": 750,
+    "children": 1125,
+    "households": 833
+   },
+   "programme": [
+    {
+     "space": "clinic",
+     "group": "care",
+     "people": 500,
+     "per_module": 450,
+     "modules": 2,
+     "note": "post-Ebola follow-up: eyes, joints, hearing (3 rooms × 150)"
+    },
+    {
+     "space": "counselling",
+     "group": "care",
+     "people": 1334,
+     "per_module": 450,
+     "modules": 3,
+     "note": "psychosocial support, 3 rooms × 150 people"
+    },
+    {
+     "space": "workshop",
+     "group": "work",
+     "people": 833,
+     "per_module": 120,
+     "modules": 7,
+     "note": "skills and livelihoods for families that lost an earner"
+    },
+    {
+     "space": "hall",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 2,
+     "note": "assembly, memorial ceremonies; 2 modules joined, 1 per site"
+    },
+    {
+     "space": "kitchen",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 1,
+     "note": "community kitchen and market, 1 per site"
+    },
+    {
+     "space": "classroom",
+     "group": "learn",
+     "people": 1125,
+     "per_module": 90,
+     "modules": 13,
+     "note": "catch-up classes: schools closed Aug 2014 – Jan 2015; 30 pupils × 3 shifts"
+    }
+   ],
+   "modules_needed": 28,
+   "modules_from_ward": 9,
+   "modules_extra": 19,
+   "modules_to_stock": 0,
+   "layout": {
+    "site_id": "S2",
+    "rects": [
+     {
+      "name": "triage",
+      "zone": "gather",
+      "x": 13.0,
+      "y": 0.0,
+      "w": 18.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "reception"
+     },
+     {
+      "name": "family_visiting",
+      "zone": "gather",
+      "x": 31.0,
+      "y": 0.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "café"
+     },
+     {
+      "name": "donning_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 15.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 21.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "clinic_1",
+      "zone": "care",
+      "x": 19.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "clinic"
+     },
+     {
+      "name": "clinic_2",
+      "zone": "care",
+      "x": 25.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "clinic"
+     },
+     {
+      "name": "counselling_3",
+      "zone": "care",
+      "x": 31.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "counselling_4",
+      "zone": "care",
+      "x": 37.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "counselling_5",
+      "zone": "care",
+      "x": 43.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "donning_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 36.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 42.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "workshop_1",
+      "zone": "work",
+      "x": 19.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_2",
+      "zone": "work",
+      "x": 25.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_3",
+      "zone": "work",
+      "x": 31.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_4",
+      "zone": "work",
+      "x": 37.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_5",
+      "zone": "work",
+      "x": 43.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "donning_work_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 57.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_work_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 63.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "workshop_6",
+      "zone": "work",
+      "x": 19.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_7",
+      "zone": "work",
+      "x": 25.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "donning_gather_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 78.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_gather_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 84.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "hall",
+      "zone": "gather",
+      "x": 19.0,
+      "y": 72.0,
+      "w": 12.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "hall"
+     },
+     {
+      "name": "kitchen_3",
+      "zone": "gather",
+      "x": 31.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "kitchen"
+     },
+     {
+      "name": "donning_learn_5",
+      "zone": "service",
+      "x": 13.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_5",
+      "zone": "service",
+      "x": 13.0,
+      "y": 99.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_5",
+      "zone": "service",
+      "x": 13.0,
+      "y": 105.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_1",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_2",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_3",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_4",
+      "zone": "learn",
+      "x": 37.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_5",
+      "zone": "learn",
+      "x": 43.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "donning_learn_6",
+      "zone": "service",
+      "x": 13.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_6",
+      "zone": "service",
+      "x": 13.0,
+      "y": 120.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_6",
+      "zone": "service",
+      "x": 13.0,
+      "y": 126.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_6",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_7",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_8",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_9",
+      "zone": "learn",
+      "x": 37.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_10",
+      "zone": "learn",
+      "x": 43.0,
+      "y": 114.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "donning_learn_7",
+      "zone": "service",
+      "x": 13.0,
+      "y": 135.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_7",
+      "zone": "service",
+      "x": 13.0,
+      "y": 141.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_7",
+      "zone": "service",
+      "x": 13.0,
+      "y": 147.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_11",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 135.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_12",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 135.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_13",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 135.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "patient_corridor",
+      "zone": "street",
+      "x": 49.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 147.0,
+      "kind": "corridor",
+      "program": "covered street"
+     },
+     {
+      "name": "patient_discharge",
+      "zone": "service",
+      "x": 13.0,
+      "y": 156.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "toilets"
+     },
+     {
+      "name": "laundry",
+      "zone": "service",
+      "x": 19.0,
+      "y": 156.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "laundry"
+     },
+     {
+      "name": "memorial_garden",
+      "zone": "garden",
+      "x": 46.0,
+      "y": 156.0,
+      "w": 13.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "memorial garden"
+     },
+     {
+      "name": "admin_data",
+      "zone": "care",
+      "x": 0,
+      "y": 0.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "admin"
+     },
+     {
+      "name": "lab",
+      "zone": "care",
+      "x": 0,
+      "y": 6.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "clinic lab"
+     },
+     {
+      "name": "pharmacy",
+      "zone": "care",
+      "x": 0,
+      "y": 12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "pharmacy"
+     },
+     {
+      "name": "stores",
+      "zone": "service",
+      "x": 0,
+      "y": 18.0,
+      "w": 12.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "stores"
+     },
+     {
+      "name": "staff_rest",
+      "zone": "learn",
+      "x": 0,
+      "y": 30.0,
+      "w": 12.0,
+      "h": 18.0,
+      "kind": "space",
+      "program": "library"
+     },
+     {
+      "name": "water_treatment",
+      "zone": "service",
+      "x": 0.0,
+      "y": -12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "water"
+     },
+     {
+      "name": "generator",
+      "zone": "service",
+      "x": 18.0,
+      "y": -12.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "solar + generator"
+     },
+     {
+      "name": "loading_zone",
+      "zone": "gather",
+      "x": 30.0,
+      "y": -18.0,
+      "w": 18.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "market square"
+     },
+     {
+      "name": "staff_dormitory",
+      "zone": "service",
+      "x": 71.0,
+      "y": 0,
+      "w": 54.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "teachers' housing"
+     },
+     {
+      "name": "burial_area",
+      "zone": "garden",
+      "x": 71.0,
+      "y": 144.0,
+      "w": 48.0,
+      "h": 18.0,
+      "kind": "space",
+      "program": "cemetery and memorial park"
+     }
+    ],
+    "patient_flow": [
+     [
+      19.0,
+      3.0
+     ],
+     [
+      50.5,
+      3.0
+     ],
+     [
+      50.5,
+      18.0
+     ],
+     [
+      50.5,
+      39.0
+     ],
+     [
+      50.5,
+      60.0
+     ],
+     [
+      50.5,
+      81.0
+     ],
+     [
+      50.5,
+      102.0
+     ],
+     [
+      50.5,
+      123.0
+     ],
+     [
+      50.5,
+      144.0
+     ],
+     [
+      50.5,
+      159.0
+     ]
+    ],
+    "rows": [
+     {
+      "ward": "care",
+      "y": 9.0,
+      "modules": 5
+     },
+     {
+      "ward": "work",
+      "y": 30.0,
+      "modules": 5
+     },
+     {
+      "ward": "work",
+      "y": 51.0,
+      "modules": 2
+     },
+     {
+      "ward": "gather",
+      "y": 72.0,
+      "modules": 3
+     },
+     {
+      "ward": "learn",
+      "y": 93.0,
+      "modules": 5
+     },
+     {
+      "ward": "learn",
+      "y": 114.0,
+      "modules": 5
+     },
+     {
+      "ward": "learn",
+      "y": 135.0,
+      "modules": 3
+     }
+    ],
+    "fences": {
+     "outer": [
+      -6.0,
+      -6.0,
+      71.0,
+      174.0
+     ]
+    },
+    "extent": [
+     0,
+     -18.0,
+     125.0,
+     162.0
+    ]
+   },
+   "overlaps": [],
+   "cladding": {
+    "ward": "sealed twin-wall PP panels, washable with 0.5% chlorine; negative-pressure end wall",
+    "community": "lower 1.2 m: timber louvre panels (cross-ventilation); upper: translucent PP diamonds; end walls: open doors to the covered street"
+   }
+  },
+  {
+   "site_id": "S3",
+   "near": "Kouankan",
+   "people": {
+    "cases": 323,
+    "survivors": 129,
+    "deaths": 194,
+    "children": 290,
+    "households": 215
+   },
+   "programme": [
+    {
+     "space": "clinic",
+     "group": "care",
+     "people": 129,
+     "per_module": 450,
+     "modules": 1,
+     "note": "post-Ebola follow-up: eyes, joints, hearing (3 rooms × 150)"
+    },
+    {
+     "space": "counselling",
+     "group": "care",
+     "people": 344,
+     "per_module": 450,
+     "modules": 1,
+     "note": "psychosocial support, 3 rooms × 150 people"
+    },
+    {
+     "space": "workshop",
+     "group": "work",
+     "people": 215,
+     "per_module": 120,
+     "modules": 2,
+     "note": "skills and livelihoods for families that lost an earner"
+    },
+    {
+     "space": "hall",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 2,
+     "note": "assembly, memorial ceremonies; 2 modules joined, 1 per site"
+    },
+    {
+     "space": "kitchen",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 1,
+     "note": "community kitchen and market, 1 per site"
+    },
+    {
+     "space": "classroom",
+     "group": "learn",
+     "people": 290,
+     "per_module": 90,
+     "modules": 4,
+     "note": "catch-up classes: schools closed Aug 2014 – Jan 2015; 30 pupils × 3 shifts"
+    }
+   ],
+   "modules_needed": 11,
+   "modules_from_ward": 7,
+   "modules_extra": 4,
+   "modules_to_stock": 0,
+   "layout": {
+    "site_id": "S3",
+    "rects": [
+     {
+      "name": "triage",
+      "zone": "gather",
+      "x": 13.0,
+      "y": 0.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "reception"
+     },
+     {
+      "name": "family_visiting",
+      "zone": "gather",
+      "x": 25.0,
+      "y": 0.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "café"
+     },
+     {
+      "name": "donning_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 15.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 21.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "clinic_1",
+      "zone": "care",
+      "x": 19.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "clinic"
+     },
+     {
+      "name": "counselling_2",
+      "zone": "care",
+      "x": 25.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "donning_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 36.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 42.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "workshop_1",
+      "zone": "work",
+      "x": 19.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_2",
+      "zone": "work",
+      "x": 25.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "donning_gather_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 57.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_gather_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 63.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "hall",
+      "zone": "gather",
+      "x": 19.0,
+      "y": 51.0,
+      "w": 12.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "hall"
+     },
+     {
+      "name": "kitchen_3",
+      "zone": "gather",
+      "x": 31.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "kitchen"
+     },
+     {
+      "name": "donning_learn_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 78.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 84.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_1",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_2",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_3",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_4",
+      "zone": "learn",
+      "x": 37.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "patient_corridor",
+      "zone": "street",
+      "x": 43.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 84.0,
+      "kind": "corridor",
+      "program": "covered street"
+     },
+     {
+      "name": "patient_discharge",
+      "zone": "service",
+      "x": 13.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "toilets"
+     },
+     {
+      "name": "laundry",
+      "zone": "service",
+      "x": 19.0,
+      "y": 93.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "laundry"
+     },
+     {
+      "name": "memorial_garden",
+      "zone": "garden",
+      "x": 40.0,
+      "y": 93.0,
+      "w": 13.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "memorial garden"
+     },
+     {
+      "name": "admin_data",
+      "zone": "care",
+      "x": 0,
+      "y": 0.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "admin"
+     },
+     {
+      "name": "lab",
+      "zone": "care",
+      "x": 0,
+      "y": 6.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "clinic lab"
+     },
+     {
+      "name": "pharmacy",
+      "zone": "care",
+      "x": 0,
+      "y": 12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "pharmacy"
+     },
+     {
+      "name": "stores",
+      "zone": "service",
+      "x": 0,
+      "y": 18.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "stores"
+     },
+     {
+      "name": "staff_rest",
+      "zone": "learn",
+      "x": 0,
+      "y": 24.0,
+      "w": 12.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "library"
+     },
+     {
+      "name": "water_treatment",
+      "zone": "service",
+      "x": 0.0,
+      "y": -12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "water"
+     },
+     {
+      "name": "generator",
+      "zone": "service",
+      "x": 18.0,
+      "y": -12.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "solar + generator"
+     },
+     {
+      "name": "loading_zone",
+      "zone": "gather",
+      "x": 30.0,
+      "y": -18.0,
+      "w": 18.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "market square"
+     },
+     {
+      "name": "staff_dormitory",
+      "zone": "service",
+      "x": 65.0,
+      "y": 0,
+      "w": 42.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "teachers' housing"
+     },
+     {
+      "name": "burial_area",
+      "zone": "garden",
+      "x": 65.0,
+      "y": 81.0,
+      "w": 36.0,
+      "h": 18.0,
+      "kind": "space",
+      "program": "cemetery and memorial park"
+     }
+    ],
+    "patient_flow": [
+     [
+      19.0,
+      3.0
+     ],
+     [
+      44.5,
+      3.0
+     ],
+     [
+      44.5,
+      18.0
+     ],
+     [
+      44.5,
+      39.0
+     ],
+     [
+      44.5,
+      60.0
+     ],
+     [
+      44.5,
+      81.0
+     ],
+     [
+      44.5,
+      96.0
+     ]
+    ],
+    "rows": [
+     {
+      "ward": "care",
+      "y": 9.0,
+      "modules": 2
+     },
+     {
+      "ward": "work",
+      "y": 30.0,
+      "modules": 2
+     },
+     {
+      "ward": "gather",
+      "y": 51.0,
+      "modules": 3
+     },
+     {
+      "ward": "learn",
+      "y": 72.0,
+      "modules": 4
+     }
+    ],
+    "fences": {
+     "outer": [
+      -6.0,
+      -6.0,
+      65.0,
+      111.0
+     ]
+    },
+    "extent": [
+     0,
+     -18.0,
+     107.0,
+     99.0
+    ]
+   },
+   "overlaps": [],
+   "cladding": {
+    "ward": "sealed twin-wall PP panels, washable with 0.5% chlorine; negative-pressure end wall",
+    "community": "lower 1.2 m: timber louvre panels (cross-ventilation); upper: translucent PP diamonds; end walls: open doors to the covered street"
+   }
+  },
+  {
+   "site_id": "S4",
+   "near": "N'Zébéla",
+   "people": {
+    "cases": 300,
+    "survivors": 120,
+    "deaths": 180,
+    "children": 270,
+    "households": 200
+   },
+   "programme": [
+    {
+     "space": "clinic",
+     "group": "care",
+     "people": 120,
+     "per_module": 450,
+     "modules": 1,
+     "note": "post-Ebola follow-up: eyes, joints, hearing (3 rooms × 150)"
+    },
+    {
+     "space": "counselling",
+     "group": "care",
+     "people": 320,
+     "per_module": 450,
+     "modules": 1,
+     "note": "psychosocial support, 3 rooms × 150 people"
+    },
+    {
+     "space": "workshop",
+     "group": "work",
+     "people": 200,
+     "per_module": 120,
+     "modules": 2,
+     "note": "skills and livelihoods for families that lost an earner"
+    },
+    {
+     "space": "hall",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 2,
+     "note": "assembly, memorial ceremonies; 2 modules joined, 1 per site"
+    },
+    {
+     "space": "kitchen",
+     "group": "gather",
+     "people": null,
+     "per_module": null,
+     "modules": 1,
+     "note": "community kitchen and market, 1 per site"
+    },
+    {
+     "space": "classroom",
+     "group": "learn",
+     "people": 270,
+     "per_module": 90,
+     "modules": 3,
+     "note": "catch-up classes: schools closed Aug 2014 – Jan 2015; 30 pupils × 3 shifts"
+    }
+   ],
+   "modules_needed": 10,
+   "modules_from_ward": 7,
+   "modules_extra": 3,
+   "modules_to_stock": 0,
+   "layout": {
+    "site_id": "S4",
+    "rects": [
+     {
+      "name": "triage",
+      "zone": "gather",
+      "x": 13.0,
+      "y": 0.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "reception"
+     },
+     {
+      "name": "family_visiting",
+      "zone": "gather",
+      "x": 25.0,
+      "y": 0.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "café"
+     },
+     {
+      "name": "donning_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 15.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_care_1",
+      "zone": "service",
+      "x": 13.0,
+      "y": 21.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "clinic_1",
+      "zone": "care",
+      "x": 19.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "clinic"
+     },
+     {
+      "name": "counselling_2",
+      "zone": "care",
+      "x": 25.0,
+      "y": 9.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "care",
+      "beds": 12,
+      "program": "counselling"
+     },
+     {
+      "name": "donning_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 36.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_work_2",
+      "zone": "service",
+      "x": 13.0,
+      "y": 42.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "workshop_1",
+      "zone": "work",
+      "x": 19.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "workshop_2",
+      "zone": "work",
+      "x": 25.0,
+      "y": 30.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "work",
+      "beds": 12,
+      "program": "workshop"
+     },
+     {
+      "name": "donning_gather_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 57.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_gather_3",
+      "zone": "service",
+      "x": 13.0,
+      "y": 63.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "hall",
+      "zone": "gather",
+      "x": 19.0,
+      "y": 51.0,
+      "w": 12.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "hall"
+     },
+     {
+      "name": "kitchen_3",
+      "zone": "gather",
+      "x": 31.0,
+      "y": 51.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "gather",
+      "beds": 12,
+      "program": "kitchen"
+     },
+     {
+      "name": "donning_learn_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "donning",
+      "program": "washroom"
+     },
+     {
+      "name": "ppe_store_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 78.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "store",
+      "program": "storage"
+     },
+     {
+      "name": "doffing_learn_4",
+      "zone": "service",
+      "x": 13.0,
+      "y": 84.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "doffing",
+      "program": "washroom"
+     },
+     {
+      "name": "classroom_1",
+      "zone": "learn",
+      "x": 19.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_2",
+      "zone": "learn",
+      "x": 25.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "classroom_3",
+      "zone": "learn",
+      "x": 31.0,
+      "y": 72.0,
+      "w": 6.0,
+      "h": 18.0,
+      "kind": "community_module",
+      "ward": "learn",
+      "beds": 12,
+      "program": "classroom"
+     },
+     {
+      "name": "patient_corridor",
+      "zone": "street",
+      "x": 37.0,
+      "y": 6.0,
+      "w": 3.0,
+      "h": 84.0,
+      "kind": "corridor",
+      "program": "covered street"
+     },
+     {
+      "name": "patient_discharge",
+      "zone": "service",
+      "x": 13.0,
+      "y": 93.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "toilets"
+     },
+     {
+      "name": "laundry",
+      "zone": "service",
+      "x": 19.0,
+      "y": 93.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "laundry"
+     },
+     {
+      "name": "memorial_garden",
+      "zone": "garden",
+      "x": 34.0,
+      "y": 93.0,
+      "w": 13.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "memorial garden"
+     },
+     {
+      "name": "admin_data",
+      "zone": "care",
+      "x": 0,
+      "y": 0.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "admin"
+     },
+     {
+      "name": "lab",
+      "zone": "care",
+      "x": 0,
+      "y": 6.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "clinic lab"
+     },
+     {
+      "name": "pharmacy",
+      "zone": "care",
+      "x": 0,
+      "y": 12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "pharmacy"
+     },
+     {
+      "name": "stores",
+      "zone": "service",
+      "x": 0,
+      "y": 18.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "stores"
+     },
+     {
+      "name": "staff_rest",
+      "zone": "learn",
+      "x": 0,
+      "y": 24.0,
+      "w": 12.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "library"
+     },
+     {
+      "name": "water_treatment",
+      "zone": "service",
+      "x": 0.0,
+      "y": -12.0,
+      "w": 12.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "water"
+     },
+     {
+      "name": "generator",
+      "zone": "service",
+      "x": 18.0,
+      "y": -12.0,
+      "w": 6.0,
+      "h": 6.0,
+      "kind": "space",
+      "program": "solar + generator"
+     },
+     {
+      "name": "loading_zone",
+      "zone": "gather",
+      "x": 30.0,
+      "y": -18.0,
+      "w": 18.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "market square"
+     },
+     {
+      "name": "staff_dormitory",
+      "zone": "service",
+      "x": 60.0,
+      "y": 0,
+      "w": 42.0,
+      "h": 12.0,
+      "kind": "space",
+      "program": "teachers' housing"
+     },
+     {
+      "name": "burial_area",
+      "zone": "garden",
+      "x": 60.0,
+      "y": 81.0,
+      "w": 36.0,
+      "h": 18.0,
+      "kind": "space",
+      "program": "cemetery and memorial park"
+     }
+    ],
+    "patient_flow": [
+     [
+      19.0,
+      3.0
+     ],
+     [
+      38.5,
+      3.0
+     ],
+     [
+      38.5,
+      18.0
+     ],
+     [
+      38.5,
+      39.0
+     ],
+     [
+      38.5,
+      60.0
+     ],
+     [
+      38.5,
+      81.0
+     ],
+     [
+      38.5,
+      96.0
+     ]
+    ],
+    "rows": [
+     {
+      "ward": "care",
+      "y": 9.0,
+      "modules": 2
+     },
+     {
+      "ward": "work",
+      "y": 30.0,
+      "modules": 2
+     },
+     {
+      "ward": "gather",
+      "y": 51.0,
+      "modules": 3
+     },
+     {
+      "ward": "learn",
+      "y": 72.0,
+      "modules": 3
+     }
+    ],
+    "fences": {
+     "outer": [
+      -6.0,
+      -6.0,
+      59.0,
+      111.0
+     ]
+    },
+    "extent": [
+     0,
+     -18.0,
+     102.0,
+     99.0
+    ]
+   },
+   "overlaps": [],
+   "cladding": {
+    "ward": "sealed twin-wall PP panels, washable with 0.5% chlorine; negative-pressure end wall",
+    "community": "lower 1.2 m: timber louvre panels (cross-ventilation); upper: translucent PP diamonds; end walls: open doors to the covered street"
+   }
+  }
+ ]
+}
