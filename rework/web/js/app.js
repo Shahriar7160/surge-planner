@@ -229,7 +229,7 @@ function siteCard() {
 function moduleCard() {
   const m = D.M, mt = m.metrics, hrs = m.deployment.reduce((a, s) => a + s.crew_min, 0) / 60;
   return `<div class="modcard"><h3>Ward module · ${m.label}</h3>
-    <figure class="fold"><img src="data/fold.gif" alt="The ward skin folding from one flat sheet into the vault and back" loading="lazy">
+    <figure class="fold"><img src="data/SURGE-deployment.gif" alt="The ward skin folding from one flat sheet into the vault and back" loading="lazy">
       <figcaption>Folding study: edge lengths fixed, hinge angles driven, feet anchored. One flat sheet → vault → flat pack.</figcaption></figure>
     <p class="note">Chosen from 58 fold variants (step 6): aluminium frame that folds flat, ${D.M.faces.length} washable triangular
     panels of ${mt.unique_panels} shapes (${mt.panels} sheet pieces) that fold from one flat sheet (angle error ${mt.flat_fold_err_deg}°),
