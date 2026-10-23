@@ -229,8 +229,8 @@ function siteCard() {
 function moduleCard() {
   const m = D.M, mt = m.metrics, hrs = m.deployment.reduce((a, s) => a + s.crew_min, 0) / 60;
   return `<div class="modcard"><h3>Ward module · ${m.label}</h3>
-    <figure class="fold"><img src="data/SURGE-deployment.gif" alt="The ward skin folding from one flat sheet into the vault and back" loading="lazy">
-      <figcaption>Folding study: edge lengths fixed, hinge angles driven, feet anchored. One flat sheet → vault → flat pack.</figcaption></figure>
+    <figure class="fold"><img src="data/SURGE-deployment.gif" alt="Deployment of the ward skin: flat pack, unpacked sheet, raised into the ward vault" loading="lazy">
+      <figcaption>Deployment, simulated in Grasshopper with Kangaroo 2: flat pack → open sheet → ward vault.</figcaption></figure>
     <p class="note">Chosen from 58 fold variants (step 6): aluminium frame that folds flat, ${D.M.faces.length} washable triangular
     panels of ${mt.unique_panels} shapes (${mt.panels} sheet pieces) that fold from one flat sheet (angle error ${mt.flat_fold_err_deg}°),
     roof facets ≥ ${Math.round(mt.min_slope_deg)}° because the wettest month of 2014 had
